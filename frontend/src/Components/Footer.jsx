@@ -29,7 +29,7 @@ const Footer = () => {
                 required
               />
               <input
-                className="p-2 text-sm text-white rounded-e-xl bg-[#00B207] hover:opacity-85 transition-opacity ease-in"
+                className="p-2 text-sm text-white rounded-xl -translate-x-2 bg-[#00B207] hover:opacity-85 transition-opacity ease-in"
                 type="submit"
                 value="Subscribe"
               ></input>
@@ -59,7 +59,7 @@ const Footer = () => {
       </section>
 
       <section className="w-full mx-auto max-w-screen-xl text-slate-300 flex items-center p-6">
-        <div className="flex flex-row flex-wrap gap-16">
+        <div className="flex flex-row flex-wrap gap-10">
           {/* Company */}
           <section className=" max-w-[300px] min-w-[300px] w-3/12">
             <h3 className="font-extrabold">GreenShopper</h3>

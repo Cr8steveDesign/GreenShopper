@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
   // Define Functions
 
@@ -7,9 +9,11 @@ const Header = () => {
   return (
     <header className="flex flex-col w-full items-center box-border">
       <div className="flex justify-between item-center p-6 w-[100%] max-w-screen-xl">
-        <h1 className=" text-3xl font-black ">
-          <span className="text-[#00B207]">Green</span>Shopper 🌿
-        </h1>
+        <Link to="/">
+          <h1 className=" text-3xl font-black ">
+            <span className="text-[#00B207]">Green</span>Shopper 🌿
+          </h1>
+        </Link>
 
         {/* Form goes here */}
         <form onSubmit={handleSearch} className="text-sm">
@@ -51,21 +55,35 @@ const Header = () => {
       <nav className="w-full flex justify-center bg-black text-slate-100 py-4 text-sm">
         <div className="flex justify-between w-[100%] max-w-screen-xl px-6">
           <ul className="flex flex-row justify-between gap-7 cursor-pointer">
-            <li className="hover:opacity-85 transition-opacity ease-in">
-              Home
-            </li>
-            <li className="hover:opacity-85 transition-opacity ease-in">
-              Shop
-            </li>
-            <li className="hover:opacity-85 transition-opacity ease-in">
-              Blog
-            </li>
-            <li className="hover:opacity-85 transition-opacity ease-in">
-              About Us
-            </li>
-            <li className="hover:opacity-85 transition-opacity ease-in">
-              Contact Us
-            </li>
+            <Link to="/">
+              <li className="hover:opacity-85 transition-opacity ease-in">
+                Home
+              </li>
+            </Link>
+
+            <Link to="/shop">
+              <li className="hover:opacity-85 transition-opacity ease-in">
+                Shop
+              </li>
+            </Link>
+
+            <Link to="/blog">
+              <li className="hover:opacity-85 transition-opacity ease-in">
+                Blog
+              </li>
+            </Link>
+
+            <Link to="/about-us">
+              <li className="hover:opacity-85 transition-opacity ease-in">
+                About Us
+              </li>
+            </Link>
+
+            <Link to="/contact-us">
+              <li className="hover:opacity-85 transition-opacity ease-in">
+                Contact Us
+              </li>
+            </Link>
           </ul>
 
           {/* Telephone details */}
