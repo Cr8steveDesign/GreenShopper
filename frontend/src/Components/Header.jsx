@@ -8,7 +8,7 @@ const Header = () => {
     <header className="flex flex-col w-full items-center box-border">
       <div className="flex justify-between item-center p-6 w-[100%] max-w-screen-xl">
         <h1 className=" text-3xl font-black ">
-          <span className="text-[#00B207]">Green</span>Shopper
+          <span className="text-[#00B207]">Green</span>Shopper 🌿
         </h1>
 
         {/* Form goes here */}
@@ -16,7 +16,7 @@ const Header = () => {
           <input
             type="text"
             placeholder="Search Available Products"
-            className="p-2 outline outline-1 outline-slate-400 min-w-[300px] rounded-s-lg"
+            className="p-2 outline outline-1 outline-slate-400 rounded-s-lg"
             required
           />
           <input
@@ -29,7 +29,7 @@ const Header = () => {
         {/* Wishlist and Shopping Cart */}
         <section className="flex justify-between gap-2 ">
           <img
-            src="/public/Vector.png"
+            src="/Vector.png"
             alt="Wish List"
             title="Wish List"
             className=" scale-75"
@@ -41,7 +41,7 @@ const Header = () => {
             >
               0
             </p>
-            <img src="/public/Bag.png" alt="Cart" />
+            <img src="/Bag.png" alt="Cart" />
             <p className="font-bold"> N0.00</p>
           </div>
         </section>

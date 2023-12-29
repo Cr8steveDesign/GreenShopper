@@ -5,7 +5,7 @@ const Footer = () => {
     console.log("Subscribed to Newsletter!");
   };
   return (
-    <footer className="w-full bg-black flex flex-col items-center mt-3">
+    <footer className="w-full bg-black flex flex-col items-center">
       <section className="w-full bg-slate-200">
         <div className=" w-full mx-auto max-w-screen-xl flex justify-between items-center p-6">
           <div className=" w-[40%] text-xs">
@@ -39,35 +39,19 @@ const Footer = () => {
             <ul className="flex gap-2">
               {/* Facebook */}
               <li className=" h-10 w-10 p-2 object-contain rounded-full hover:bg-[#00B207] transition-colors ease-in flex justify-center items-center cursor-pointer">
-                <img
-                  className="w-full"
-                  src="public/facebook.png"
-                  alt="Facebook"
-                />
+                <img className="w-full" src="/facebook.png" alt="Facebook" />
               </li>
               {/* Twitter */}
               <li className=" h-10 w-10 p-2 object-contain rounded-full hover:bg-[#00B207] transition-colors ease-in flex justify-center items-center cursor-pointer">
-                <img
-                  className="w-full"
-                  src="public/twitter.png"
-                  alt="Twitter"
-                />
+                <img className="w-full" src="/twitter.png" alt="Twitter" />
               </li>
               {/* Facebook */}
               <li className=" h-10 w-10 p-2 object-contain rounded-full hover:bg-[#00B207] transition-colors ease-in flex justify-center items-center cursor-pointer">
-                <img
-                  className="w-full"
-                  src="public/pinterest.png"
-                  alt="Pinterest"
-                />
+                <img className="w-full" src="/pinterest.png" alt="Pinterest" />
               </li>
               {/* Facebook */}
               <li className=" h-10 w-10 p-2 object-contain rounded-full hover:bg-[#00B207] transition-colors ease-in flex justify-center items-center cursor-pointer">
-                <img
-                  className="w-full"
-                  src="public/instagram.png"
-                  alt="Instagram"
-                />
+                <img className="w-full" src="/instagram.png" alt="Instagram" />
               </li>
             </ul>
           </div>
@@ -174,7 +158,7 @@ const Footer = () => {
           <span className="text-[#00B207]">Developed by Cre8Steve Dev</span>
         </p>
         <img
-          src="public/payments.png"
+          src="/payments.png"
           alt="Payment Systems"
           className=" w-1/4 hover:scale-110 transition-transform ease-in-out"
         />
