@@ -1,0 +1,73 @@
+const featuredproducts = [
+  {
+    imgUrl: "featured/chanise-cabbage.png",
+    productName: "Chanise Cabbage",
+    price: 14.99,
+    rating: 4,
+    productId: 1234567001,
+    inStock: true,
+    discount: false,
+    discountPrice: 0,
+    discountPercent: 0,
+    category: "Vegetables",
+    tags: ["vegetable", "cabbage"],
+  },
+
+  {
+    imgUrl: "featured/green-lettuce.png",
+    productName: "Green Lettuce",
+    price: 12.75,
+    rating: 5,
+    productId: 1234567002,
+    inStock: false,
+    discount: false,
+    discountPrice: 0,
+    discountPercent: 0,
+    category: "Vegetables",
+    tags: ["vegetable", "lettuce"],
+  },
+
+  {
+    imgUrl: "featured/green-chili.png",
+    productName: "Green Chili",
+    price: 20.25,
+    rating: 3,
+    productId: 1234567003,
+    inStock: true,
+    discount: true,
+    discountPrice: 20.25 - 20.25 * 0.25,
+    discountPercent: 25,
+    category: "Vegetables",
+    tags: ["vegetable", "chili"],
+  },
+
+  {
+    imgUrl: "featured/corn.png",
+    productName: "Corn",
+    price: 9.75,
+    rating: 2,
+    productId: 1234567004,
+    inStock: true,
+    discount: true,
+    discountPrice: 9.75 - 9.75 * 0.15,
+    discountPercent: 15,
+    category: "Food",
+    tags: ["food", "corn"],
+  },
+
+  {
+    imgUrl: "featured/tomatoes.png",
+    productName: "Red Tomatoes",
+    price: 18.3,
+    rating: 5,
+    productId: 1234567005,
+    inStock: true,
+    discount: false,
+    discountPrice: 0,
+    discountPercent: 0,
+    category: "Vegetables",
+    tags: ["vegetable", "tomatoes"],
+  },
+];
+
+export default featuredproducts;

@@ -8,3 +8,11 @@
   scroll-behavior: smooth;
   box-sizing: border-box;
 }
+
+#featured-container::-webkit-scrollbar {
+  display: none;
+}
+
+#featured-container {
+  scroll-behavior: smooth;
+}

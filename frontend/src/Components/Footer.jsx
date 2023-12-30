@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="w-full bg-black flex flex-col items-center">
       <section className="w-full bg-slate-200">
         <div className=" w-full mx-auto max-w-screen-xl flex justify-between items-center p-6">
-          <div className=" w-[40%] text-xs">
+          <div className=" w-[40%] md:w-[25%] text-xs">
             {" "}
             <h3 className="font-extrabold text-xl">
               Subscribe To Our Newsletter
@@ -59,9 +59,9 @@ const Footer = () => {
       </section>
 
       <section className="w-full mx-auto max-w-screen-xl text-slate-300 flex items-center p-6">
-        <div className="flex flex-row flex-wrap gap-10">
+        <div className="flex flex-row flex-wrap gap-10 md:gap-5 lg:gap-10">
           {/* Company */}
-          <section className=" max-w-[300px] min-w-[300px] w-3/12">
+          <section className=" max-w-[300px] w-3/4 md:w-1/4 sm:w-7/12">
             <h3 className="font-extrabold">GreenShopper</h3>
             <ul>
               <li className="text-xs">
