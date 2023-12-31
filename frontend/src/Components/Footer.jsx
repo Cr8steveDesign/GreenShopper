@@ -7,20 +7,21 @@ const Footer = () => {
   return (
     <footer className="w-full bg-black flex flex-col items-center">
       <section className="w-full bg-slate-200">
-        <div className=" w-full mx-auto max-w-screen-xl flex justify-between items-center p-6">
-          <div className=" w-[40%] md:w-[25%] text-xs">
+        <div className=" w-full mx-auto max-w-screen-xl flex md:flex-row flex-col justify-between items-center p-6">
+          {/*  */}
+          <div className=" w-full  md:w-[30%] lg:w-[40%] md:text-xs">
             {" "}
-            <h3 className="font-extrabold text-xl">
+            <h3 className="font-extrabold text-xl text-center md:text-left">
               Subscribe To Our Newsletter
             </h3>
-            <p>
+            <p className="text-center text-xs mb-2 md:mb-0 md:text-base md:text-left">
               Get weekly updates about the latest fresh food recipie, best deals
               and lots more. Subscribe Now!
             </p>
           </div>
 
           {/* Form for Newsletter */}
-          <div className="flex gap-3 items-center">
+          <div className="flex gap-3 items-center flex-wrap sm:flex-nowrap">
             <form onSubmit={handleSubscribeNewsLetter}>
               <input
                 className="p-2 text-sm rounded-s-xl"
@@ -59,7 +60,7 @@ const Footer = () => {
       </section>
 
       <section className="w-full mx-auto max-w-screen-xl text-slate-300 flex items-center p-6">
-        <div className="flex flex-row flex-wrap gap-10 md:gap-5 lg:gap-10">
+        <div className="flex flex-row flex-wrap gap-x-8 gap-y-4 md:gap-15 lg:gap-10 md:justify-between mx-auto">
           {/* Company */}
           <section className=" max-w-[300px] w-3/4 md:w-1/4 sm:w-7/12">
             <h3 className="font-extrabold">GreenShopper</h3>
@@ -152,15 +153,21 @@ const Footer = () => {
       <hr className="border-slate-800  border w-full" />
 
       {/* CopyRight and Payment Sponsors */}
-      <section className="text-slate-200 text-sm flex justify-between p-6">
+      <section className="text-slate-200 text-sm flex flex-col text-center sm:text-left sm:flex-row sm:justify-between p-6">
         <p>
           GreenShopper eCommerce (c) 2024.{" "}
-          <span className="text-[#00B207]">Developed by Cre8Steve Dev</span>
+          <a
+            href="https://twitter.com/Cre8steveDev"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span className="text-[#00B207]">Developed by Cre8Steve Dev</span>
+          </a>
         </p>
         <img
           src="/payments.png"
           alt="Payment Systems"
-          className=" w-1/4 hover:scale-110 transition-transform ease-in-out"
+          className=" w-1/4 hover:scale-110 transition-transform ease-in-out mx-auto mt-3 sm:mt-0 sm:mx-0"
         />
       </section>
     </footer>

@@ -4,6 +4,8 @@ import DetailsBar from "../Components/DetailsBar.jsx";
 import FeaturedDeals from "../Components/FeaturedDeals.jsx";
 import ShopByCategories from "../Components/ShopByCategories.jsx";
 import FeaturedProducts from "../Components/FeaturedProducts.jsx";
+import VideoSection from "../Components/VideoSection.jsx";
+import Testimonials from "../Components/Testimonials.jsx";
 
 const HomePage = () => {
   return (
@@ -13,6 +15,8 @@ const HomePage = () => {
       <ShopByCategories />
       <FeaturedDeals />
       <FeaturedProducts />
+      <VideoSection />
+      <Testimonials />
     </div>
   );
 };

@@ -10,13 +10,16 @@ const Header = () => {
     <header className="flex flex-col w-full items-center box-border">
       <div className="flex justify-between item-center p-6 w-[100%] max-w-screen-xl">
         <Link to="/">
-          <h1 className=" text-3xl font-black ">
+          <h1 className=" text-xl sm:text-3xl font-black ">
             <span className="text-[#00B207]">Green</span>Shopper 🌿
           </h1>
         </Link>
 
         {/* Form goes here */}
-        <form onSubmit={handleSearch} className="text-sm">
+        <form
+          onSubmit={handleSearch}
+          className="sm:text-xs md:text-sm hidden sm:block"
+        >
           <input
             type="text"
             placeholder="Search Available Products"
@@ -87,7 +90,7 @@ const Header = () => {
           </ul>
 
           {/* Telephone details */}
-          <p>+2348174050194</p>
+          <p className="sm:block hidden">+2348174050194</p>
         </div>
       </nav>
     </header>

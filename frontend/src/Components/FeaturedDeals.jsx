@@ -7,7 +7,7 @@ import { CountDown, StartPrice, DiscountOff } from "../Utils/Widgets001.jsx";
 
 const FeaturedDeals = () => {
   return (
-    <div className="grid grid-cols-3 gap-4 mt-8 max-w-screen-xl w-full">
+    <div className=" flex flex-col items-center  sm:grid sm:grid-cols-3 gap-4 mt-8 max-w-screen-xl w-full">
       {/* Best Prices Card */}
       <Feature
         topText={"BEST DEALS"}

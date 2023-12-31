@@ -9,13 +9,15 @@ const Feature = ({ topText, mainText, link, imgLink, children }) => {
     <div className="relative rounded-xl object-cover overflow-hidden">
       <div className="absolute w-full h-full top-0 left-0 text-center p-2 mt-6 ">
         <p className={`${topColor} text-xs`}>{topText}</p>
-        <h2 className={`${topColor} text-2xl font-extrabold`}>{mainText}</h2>
+        <h2 className={`${topColor} text-4xl sm:text-2xl font-extrabold`}>
+          {mainText}
+        </h2>
         <div>{children}</div>
         <Link to={link}>
           <input
             type="button"
             value="Shop Now"
-            className="p-2 bg-white rounded-xl cursor-pointer mt-4 text-xs font-bold text-[#1faf24] hover:bg-[#1faf24] hover:text-white transition-colors ease-in duration-300"
+            className="p-2 bg-white rounded-xl cursor-pointer mt-4 text-xl sm:text-xs font-bold text-[#1faf24] hover:bg-[#1faf24] hover:text-white transition-colors ease-in duration-300"
           />
         </Link>
       </div>
