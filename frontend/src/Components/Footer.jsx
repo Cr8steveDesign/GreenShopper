@@ -1,3 +1,6 @@
+import SocialMediaLinks from "../Utils/SocialMediaLinks.jsx";
+//import { Link } from "react-router-dom";
+
 const Footer = () => {
   // Function to handle Newsletter Subscription
   const handleSubscribeNewsLetter = (e) => {
@@ -37,24 +40,12 @@ const Footer = () => {
             </form>
 
             {/* Social Media Links */}
-            <ul className="flex gap-2">
-              {/* Facebook */}
-              <li className=" h-10 w-10 p-2 object-contain rounded-full hover:bg-[#00B207] transition-colors ease-in flex justify-center items-center cursor-pointer">
-                <img className="w-full" src="/facebook.png" alt="Facebook" />
-              </li>
-              {/* Twitter */}
-              <li className=" h-10 w-10 p-2 object-contain rounded-full hover:bg-[#00B207] transition-colors ease-in flex justify-center items-center cursor-pointer">
-                <img className="w-full" src="/twitter.png" alt="Twitter" />
-              </li>
-              {/* Facebook */}
-              <li className=" h-10 w-10 p-2 object-contain rounded-full hover:bg-[#00B207] transition-colors ease-in flex justify-center items-center cursor-pointer">
-                <img className="w-full" src="/pinterest.png" alt="Pinterest" />
-              </li>
-              {/* Facebook */}
-              <li className=" h-10 w-10 p-2 object-contain rounded-full hover:bg-[#00B207] transition-colors ease-in flex justify-center items-center cursor-pointer">
-                <img className="w-full" src="/instagram.png" alt="Instagram" />
-              </li>
-            </ul>
+            <SocialMediaLinks
+              facebook="facebook.com"
+              twitter="twitter.com"
+              pinterest="pinterest.com"
+              instagram="instagram.com"
+            />
           </div>
         </div>
       </section>

@@ -55,35 +55,35 @@ const Header = () => {
       </div>
 
       {/* Navigation Section */}
-      <nav className="w-full flex justify-center bg-black text-slate-100 py-4 text-sm">
+      <nav className="w-full flex justify-center bg-black text-slate-100 py-4 text-xs sm:text-sm">
         <div className="flex justify-between w-[100%] max-w-screen-xl px-6">
           <ul className="flex flex-row justify-between gap-7 cursor-pointer">
             <Link to="/">
-              <li className="hover:opacity-85 transition-opacity ease-in">
+              <li className="hover:text-[#00B207] transition-opacity ease-in">
                 Home
               </li>
             </Link>
 
             <Link to="/shop">
-              <li className="hover:opacity-85 transition-opacity ease-in">
+              <li className="hover:text-[#00B207] transition-opacity ease-in">
                 Shop
               </li>
             </Link>
 
             <Link to="/blog">
-              <li className="hover:opacity-85 transition-opacity ease-in">
+              <li className="hover:text-[#00B207] transition-opacity ease-in">
                 Blog
               </li>
             </Link>
 
             <Link to="/about-us">
-              <li className="hover:opacity-85 transition-opacity ease-in">
+              <li className="hover:text-[#00B207] transition-opacity ease-in">
                 About Us
               </li>
             </Link>
 
             <Link to="/contact-us">
-              <li className="hover:opacity-85 transition-opacity ease-in">
+              <li className="hover:text-[#00B207] transition-opacity ease-in">
                 Contact Us
               </li>
             </Link>

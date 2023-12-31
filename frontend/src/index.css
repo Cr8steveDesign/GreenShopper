@@ -10,7 +10,8 @@
 }
 
 #featured-container::-webkit-scrollbar,
-#featured-container-2::-webkit-scrollbar {
+#featured-container-2::-webkit-scrollbar,
+#about-fresh::-webkit-scrollbar {
   display: none;
 }
 
