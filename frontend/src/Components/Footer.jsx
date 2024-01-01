@@ -1,14 +1,22 @@
 import SocialMediaLinks from "../Utils/SocialMediaLinks.jsx";
+import { useInView } from "react-intersection-observer";
 //import { Link } from "react-router-dom";
 
 const Footer = () => {
+  // Using observer to trigger entry animation
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.01 });
   // Function to handle Newsletter Subscription
   const handleSubscribeNewsLetter = (e) => {
     e.preventDefault();
     console.log("Subscribed to Newsletter!");
   };
   return (
-    <footer className="w-full bg-black flex flex-col items-center">
+    <footer
+      ref={ref}
+      className={`${
+        inView && "animate-entry"
+      } w-full bg-black flex flex-col items-center`}
+    >
       <section className="w-full bg-slate-200">
         <div className=" w-full mx-auto max-w-screen-xl flex md:flex-row flex-col justify-between items-center p-6">
           {/*  */}
@@ -33,7 +41,7 @@ const Footer = () => {
                 required
               />
               <input
-                className="p-2 text-sm text-white rounded-xl -translate-x-2 bg-[#00B207] hover:opacity-85 transition-opacity ease-in"
+                className="p-2 text-sm text-white rounded-xl -translate-x-2 bg-[#00B207] hover:opacity-85 transition-opacity ease-in animate-pulse"
                 type="submit"
                 value="Subscribe"
               ></input>

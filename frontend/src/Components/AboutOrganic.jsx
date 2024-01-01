@@ -19,7 +19,7 @@ const AboutOrganic = () => {
         </p>
       </div>
       {/*  */}
-      <div className="w-full">
+      <div className="w-full flex justify-center">
         <LazyLoadImage
           effect="blur"
           src="manfirst.png"

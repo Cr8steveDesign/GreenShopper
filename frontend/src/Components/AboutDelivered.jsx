@@ -1,10 +1,20 @@
 // second Card Component Organic Food
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+// import {useAnimation, motion} from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const AboutDelivered = () => {
+  const [ref, inView] = useInView({ triggerOnce: true });
+
+  //
   return (
-    <div className="w-full flex flex-col md:flex-row gap-2 -mb-5">
+    <div
+      className={`${
+        inView && "animate-entry"
+      } w-full flex flex-col md:flex-row gap-2 -mb-5`}
+      ref={ref}
+    >
       {/*  */}
       <div className="w-full sm:p-4 flex flex-col justify-center">
         <h2 className="text-xl sm:text-4xl lg:text-5xl font-extrabold text-[#00B207] text-center md:text-left">

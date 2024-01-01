@@ -1,12 +1,21 @@
 //  Feature Component for Home Page
 
 import { Link } from "react-router-dom";
+import { useInView } from "react-intersection-observer";
 
 // eslint-disable-next-line react/prop-types
 const Feature = ({ topText, mainText, link, imgLink, children }) => {
   let topColor = topText === "SUMMER SALE" ? "text-black" : "text-white";
+
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0 });
+
   return (
-    <div className="relative rounded-xl object-cover overflow-hidden">
+    <div
+      ref={ref}
+      className={`${
+        inView && "animate-entry"
+      } relative rounded-xl object-cover overflow-hidden`}
+    >
       <div className="absolute w-full h-full top-0 left-0 text-center p-2 mt-6 ">
         <p className={`${topColor} text-xs`}>{topText}</p>
         <h2 className={`${topColor} text-4xl sm:text-2xl font-extrabold`}>

@@ -55,7 +55,7 @@ const Header = () => {
       </div>
 
       {/* Navigation Section */}
-      <nav className="w-full flex justify-center bg-black text-slate-100 py-4 text-xs sm:text-sm">
+      <nav className="w-full flex justify-center bg-black text-slate-100 py-4 text-xs md:text-lg">
         <div className="flex justify-between w-[100%] max-w-screen-xl px-6">
           <ul className="flex flex-row justify-between gap-7 cursor-pointer">
             <Link to="/">
