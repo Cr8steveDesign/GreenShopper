@@ -1,7 +1,54 @@
 // Mini Components to support the feature cards
 
+import { useEffect, useState } from "react";
+
 export const CountDown = () => {
-  return <div className="text-xl sm:text-base">00 : 02 : 18 : 48</div>;
+  // Set Countdown
+  const finalDate = new Date("Jan 31, 2024 23:59:00").getTime();
+  const [time, setTime] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+    expired: false,
+  });
+
+  useEffect(() => {
+    let timeInterval = setInterval(() => {
+      let now = new Date().getTime();
+
+      let timeBetween = finalDate - now;
+
+      // Time Calculations
+      setTime({
+        days: Math.floor(timeBetween / (1000 * 60 * 60 * 24)),
+        hours: Math.floor(
+          (timeBetween % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        ),
+        minutes: Math.floor((timeBetween % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((timeBetween % (1000 * 60)) / 1000),
+        expired: false,
+      });
+
+      // Clear Interval at expiry
+      if (timeBetween < 0) {
+        clearInterval(timeInterval);
+        setTime((time) => ({ ...time, expired: true }));
+      }
+    });
+  }, [time]);
+
+  return (
+    <div className="text-xl sm:text-base">
+      {time.expired
+        ? "DEAL EXPIRED"
+        : `${time.days.toString().padStart(2, 0)} : ${time.hours
+            .toString()
+            .padStart(2, 0)} : ${time.minutes
+            .toString()
+            .padStart(2, 0)} : ${time.seconds.toString().padStart(2, 0)}`}
+    </div>
+  );
 };
 
 export const StartPrice = () => {

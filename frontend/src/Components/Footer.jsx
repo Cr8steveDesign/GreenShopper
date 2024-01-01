@@ -1,6 +1,6 @@
 import SocialMediaLinks from "../Utils/SocialMediaLinks.jsx";
 import { useInView } from "react-intersection-observer";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   // Using observer to trigger entry animation
@@ -8,7 +8,7 @@ const Footer = () => {
   // Function to handle Newsletter Subscription
   const handleSubscribeNewsLetter = (e) => {
     e.preventDefault();
-    console.log("Subscribed to Newsletter!");
+    alert("Subscribed to Newsletter!");
   };
   return (
     <footer
@@ -78,72 +78,104 @@ const Footer = () => {
           <section className=" w-fit">
             <h3 className="font-extrabold">My Account</h3>
             <ul>
-              <li className="hover:opacity-75 transition-opacity ease-in-out text-sm cursor-pointer">
-                My Account
-              </li>
-              <li className="hover:opacity-80 transition-opacity ease-in-out text-sm cursor-pointer">
-                Order History
-              </li>
-              <li className="hover:opacity-80 transition-opacity ease-in-out text-sm cursor-pointer">
-                Shopping Cart
-              </li>
-              <li className="hover:opacity-80 transition-opacity ease-in-out text-sm cursor-pointer">
-                Wish List
-              </li>
+              <Link to="/account">
+                <li className="hover:text-[#00B207] transition-colors ease-in-out text-sm cursor-pointer">
+                  My Account
+                </li>
+              </Link>
+              <Link to="/account/history">
+                <li className="hover:text-[#00B207] transition-colors ease-in-out text-sm cursor-pointer">
+                  Order History
+                </li>
+              </Link>
+              <Link to="/cart">
+                <li className="hover:text-[#00B207] transition-colors ease-in-out text-sm cursor-pointer">
+                  Shopping Cart
+                </li>
+              </Link>
+              <Link to="/account/wishlist">
+                <li className="hover:text-[#00B207] transition-colors ease-in-out text-sm cursor-pointer">
+                  Wish List
+                </li>
+              </Link>
             </ul>
           </section>
           {/* Category */}
           <section className="w-fit">
             <h3 className="font-extrabold">Categories</h3>
             <ul>
-              <li className="hover:opacity-80 transition-opacity ease-in-out text-sm cursor-pointer">
-                Fruits & Vegetables
-              </li>
-              <li className="hover:opacity-80 transition-opacity ease-in-out text-sm cursor-pointer">
-                Meat and Fish
-              </li>
-              <li className="hover:opacity-80 transition-opacity ease-in-out text-sm cursor-pointer">
-                Bread and Bakery
-              </li>
-              <li className="hover:opacity-80 transition-opacity ease-in-out text-sm cursor-pointer">
-                Beauty and Health
-              </li>
+              <Link to="/shop/vegetables">
+                <li className="hover:text-[#00B207] transition-colors ease-in-out text-sm cursor-pointer">
+                  Fruits & Vegetables
+                </li>
+              </Link>
+              <Link to="/shop/meat">
+                <li className="hover:text-[#00B207] transition-colors ease-in-out text-sm cursor-pointer">
+                  Meat and Fish
+                </li>
+              </Link>
+              <Link to="/shop/bakery">
+                <li className="hover:text-[#00B207] transition-colors ease-in-out text-sm cursor-pointer">
+                  Bread and Bakery
+                </li>
+              </Link>
+              <Link to="/shop/beauty">
+                <li className="hover:text-[#00B207] transition-colors ease-in-out text-sm cursor-pointer">
+                  Beauty and Health
+                </li>
+              </Link>
             </ul>
           </section>
           {/* Enquiries */}
           <section className="w-fit">
             <h3 className="font-extrabold">Enquiries</h3>
             <ul>
-              <li className="hover:opacity-80 transition-opacity ease-in-out text-sm cursor-pointer">
-                Contact Us
-              </li>
-              <li className="hover:opacity-80 transition-opacity ease-in-out text-sm cursor-pointer">
-                FAQs
-              </li>
-              <li className="hover:opacity-80 transition-opacity ease-in-out text-sm cursor-pointer">
-                Terms and Conditions
-              </li>
-              <li className="hover:opacity-80 transition-opacity ease-in-out text-sm cursor-pointer">
-                Privacy Policy
-              </li>
+              <Link to="/contact-us">
+                <li className="hover:text-[#00B207] transition-colors ease-in-out text-sm cursor-pointer">
+                  Contact Us
+                </li>
+              </Link>
+              <Link to="/faqs">
+                <li className="hover:text-[#00B207] transition-colors ease-in-out text-sm cursor-pointer">
+                  FAQs
+                </li>
+              </Link>
+              <Link to="/terms">
+                <li className="hover:text-[#00B207] transition-colors ease-in-out text-sm cursor-pointer">
+                  Terms and Conditions
+                </li>
+              </Link>
+              <Link to="/privacy">
+                <li className="hover:text-[#00B207] transition-colors ease-in-out text-sm cursor-pointer">
+                  Privacy Policy
+                </li>
+              </Link>
             </ul>
           </section>
           {/* Navigation */}
           <section className="w-fit">
             <h3 className="font-extrabold">Navigation</h3>
             <ul>
-              <li className="hover:opacity-80 transition-opacity ease-in-out text-sm cursor-pointer">
-                About Us
-              </li>
-              <li className="hover:opacity-80 transition-opacity ease-in-out text-sm cursor-pointer">
-                Shop
-              </li>
-              <li className="hover:opacity-80 transition-opacity ease-in-out text-sm cursor-pointer">
-                Product
-              </li>
-              <li className="hover:opacity-80 transition-opacity ease-in-out text-sm cursor-pointer">
-                Track Order
-              </li>
+              <Link to="/about-us">
+                <li className="hover:text-[#00B207] transition-colors ease-in-out text-sm cursor-pointer">
+                  About Us
+                </li>
+              </Link>
+              <Link to="/shop">
+                <li className="hover:text-[#00B207] transition-colors ease-in-out text-sm cursor-pointer">
+                  Shop
+                </li>
+              </Link>
+              <Link to="/account/product">
+                <li className="hover:text-[#00B207] transition-colors ease-in-out text-sm cursor-pointer">
+                  Product
+                </li>
+              </Link>
+              <Link to="/account/order">
+                <li className="hover:text-[#00B207] transition-colors ease-in-out text-sm cursor-pointer">
+                  Track Order
+                </li>
+              </Link>
             </ul>
           </section>
         </div>
