@@ -13,7 +13,7 @@ const FAQs = () => {
 
   return (
     <motion.div
-      initial={{ x: "90%" }}
+      initial={{ x: "-90%" }}
       animate={{ x: 0 }}
       exit={{ x: "-130%" }}
       className="transition-transform ease-in duration-300 sm:flex-row sm:flex max-w-screen-lg mx-auto"

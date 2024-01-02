@@ -71,7 +71,7 @@ const Header = () => {
               </li>
             </Link>
 
-            <Link to="/account">
+            <Link to={user ? "/account" : "/signup"}>
               <li className="hover:text-[#00B207] transition-opacity ease-in">
                 {user ? "My Account" : "Get Started"}
               </li>

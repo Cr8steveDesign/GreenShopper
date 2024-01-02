@@ -5,7 +5,7 @@ import MapEmbed from "../Utils/MapEmbed.jsx";
 
 const ContactUs = () => {
   return (
-    <motion.div initial={{ x: "90%" }} animate={{ x: 0 }} exit={{ x: "-130%" }}>
+    <motion.div initial={{ x: "-90%" }} animate={{ x: 0 }} exit={{ x: "-130%" }}>
       <ContactInformation />
       <MapEmbed />
     </motion.div>

@@ -16,6 +16,8 @@ import Blog from "./Views/Blog.jsx";
 import ErrorPage from "./Views/ErrorPage.jsx";
 import Footer from "./Components/Footer.jsx";
 import FAQs from "./Views/FAQs.jsx";
+import SignUp from "./Views/SignUp.jsx";
+import SignIn from "./Views/SignIn.jsx";
 
 /**
  * AnimateRoutes
@@ -45,6 +47,8 @@ const AnimateRoutes = () => {
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/faqs" element={<FAQs />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/signin" element={<SignIn />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         {/* Create Footer Component */}
