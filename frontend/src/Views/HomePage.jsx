@@ -7,9 +7,17 @@ import FeaturedProducts from "../Components/FeaturedProducts.jsx";
 import VideoSection from "../Components/VideoSection.jsx";
 import Testimonials from "../Components/Testimonials.jsx";
 
+// Framer Motion package to animate the homepage
+import { motion } from "framer-motion";
+
 const HomePage = () => {
   return (
-    <div className="p-6 flex flex-col items-center">
+    <motion.div
+      className="p-6 flex flex-col items-center"
+      initial={{ x: "90%" }}
+      animate={{ x: 0 }}
+      exit={{ x: "-130%" }}
+    >
       <HeroSection />
       <DetailsBar />
       <ShopByCategories />
@@ -17,7 +25,7 @@ const HomePage = () => {
       <FeaturedProducts />
       <VideoSection />
       <Testimonials />
-    </div>
+    </motion.div>
   );
 };
 

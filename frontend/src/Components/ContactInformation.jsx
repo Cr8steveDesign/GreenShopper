@@ -45,7 +45,7 @@ const ContactInformation = () => {
   };
 
   return (
-    <div className="w-full flex flex-col sm:flex-row gap-4 mb-5 max-w-screen-md mx-auto">
+    <div className="w-full flex flex-col sm:flex-row gap-4 mb-5 max-w-screen-lg mx-auto">
       {/*  */}
       <div className="w-full sm:w-2/4 p-6 flex flex-col justify-center items-center gap-4 text-sm text-center shadow-xl">
         {/* Location  */}

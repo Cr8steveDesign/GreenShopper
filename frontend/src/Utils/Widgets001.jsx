@@ -36,6 +36,7 @@ export const CountDown = () => {
         setTime((time) => ({ ...time, expired: true }));
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [time]);
 
   return (

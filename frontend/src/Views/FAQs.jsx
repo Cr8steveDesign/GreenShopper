@@ -1,17 +1,23 @@
 // FAQ Page
 import AccordionFaq from "../Utils/AccordionFaq.jsx";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const FAQs = () => {
   const [showAccordion, setShowAccordion] = useState([
-    false,
+    true,
     false,
     false,
     false,
   ]);
 
   return (
-    <div className="transition-transform ease-in duration-300 sm:flex-row sm:flex">
+    <motion.div
+      initial={{ x: "90%" }}
+      animate={{ x: 0 }}
+      exit={{ x: "-130%" }}
+      className="transition-transform ease-in duration-300 sm:flex-row sm:flex max-w-screen-lg mx-auto"
+    >
       <img
         src="mansecond.png"
         alt="Man Holding Vegetables"
@@ -56,7 +62,7 @@ const FAQs = () => {
           position={3}
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

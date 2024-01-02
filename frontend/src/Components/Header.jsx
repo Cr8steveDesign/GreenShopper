@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   // Define Functions
+  const user = null;
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -55,7 +56,7 @@ const Header = () => {
       </div>
 
       {/* Navigation Section */}
-      <nav className="w-full flex justify-center bg-black text-slate-100 py-4 text-xs md:text-lg">
+      <nav className="w-full flex justify-center bg-black text-slate-100 py-4 text-[10px] md:text-lg">
         <div className="flex justify-between w-[100%] max-w-screen-xl px-6">
           <ul className="flex flex-row justify-between gap-7 cursor-pointer">
             <Link to="/">
@@ -70,9 +71,9 @@ const Header = () => {
               </li>
             </Link>
 
-            <Link to="/blog">
+            <Link to="/account">
               <li className="hover:text-[#00B207] transition-opacity ease-in">
-                Blog
+                {user ? "My Account" : "Get Started"}
               </li>
             </Link>
 

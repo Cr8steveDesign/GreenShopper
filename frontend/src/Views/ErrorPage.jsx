@@ -1,9 +1,15 @@
 // Error Page Component
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const ErrorPage = () => {
   return (
-    <div className="w-full max-w-screen-xl flex flex-col items-center text-center mt-5">
+    <motion.div
+      initial={{ x: "90%" }}
+      animate={{ x: 0 }}
+      exit={{ x: "-130%" }}
+      className="w-full max-w-screen-xl flex flex-col items-center text-center mt-5 mx-auto"
+    >
       <div className="w-full max-w-lg p-3  h-[260px] sm:h-[300px] relative">
         <img
           src="notfound.png"
@@ -37,7 +43,7 @@ const ErrorPage = () => {
           className="p-3 mb-7 bg-[#00B207] rounded-3xl font-extrabold text-white animate-pulse"
         />
       </Link>
-    </div>
+    </motion.div>
   );
 };
 
