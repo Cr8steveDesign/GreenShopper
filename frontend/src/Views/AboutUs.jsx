@@ -5,13 +5,14 @@ import AboutOrganic from "../Components/AboutOrganic.jsx";
 import AboutFresh from "../Components/AboutFresh.jsx";
 import AboutDelivered from "../Components/AboutDelivered.jsx";
 import AboutTeam from "../Components/AboutTeam.jsx";
+import homeVariant from "../variants/homeVariants.js";
 
 const AboutUs = () => {
   return (
     <motion.div
-      initial={{ x: "-90%" }}
-      animate={{ x: 0 }}
-      exit={{ x: "-130%" }}
+      initial={"start"}
+      animate={"end"}
+      variants={homeVariant}
       className="w-full max-w-screen-xl p-6 mx-auto"
     >
       <AboutOrganic />

@@ -31,7 +31,7 @@ const SignIn = () => {
     setFormProcess({ ...formProcess, loading: true });
     try {
       // Make Api call to back end and await response
-      const response = await fetch("https://reqres.in/", {
+      const response = await fetch("/api/auth/signin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,7 +45,10 @@ const SignIn = () => {
       // Set the received user data to the Client
       // i.e the Name and other things necessary
       // excluding the password
-      data;
+      if (data.statusCode !== 200) {
+        throw new Error(data.message);
+      }
+      console.log(data);
 
       // Clean up Form Data
       setFormProcess({ loading: false, success: true, error: false });
@@ -87,7 +90,7 @@ const SignIn = () => {
 
         {/* Error From Server */}
         {!formProcess.success && (
-          <p className="text-sm text-red-600">`${serverError}`</p>
+          <p className="text-sm text-red-600">{serverError}</p>
         )}
 
         {/* Email Input */}

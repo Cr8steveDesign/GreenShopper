@@ -34,7 +34,7 @@ const SignUp = () => {
     setFormProcess({ ...formProcess, loading: true });
     try {
       // Make Api call to back end and await response
-      const response = await fetch("https://reqres.in/", {
+      const response = await fetch("/api/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -44,7 +44,11 @@ const SignUp = () => {
 
       //   Decode Response and see
       const data = await response.json();
-      console.log(data);
+
+      // When registration fails, throw error
+      if (data.statusCode !== 201) {
+        throw new Error(data.message);
+      }
 
       // Clean up Form Data
       setFormProcess({ loading: false, success: true, error: false });
@@ -86,7 +90,7 @@ const SignUp = () => {
 
         {/* Error From Server */}
         {!formProcess.success && (
-          <p className="text-sm text-red-600">`${serverError}`</p>
+          <p className="text-sm text-red-600">{serverError}</p>
         )}
 
         {/* Name Input */}
