@@ -3,6 +3,11 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
+// import redux state management tools
+import { useDispatch } from "react-redux";
+import { signInSuccess } from "../redux/slice/userSlice.js";
+import { loadCartSuccess } from "../redux/slice/cartSlice.js";
+
 const SignIn = () => {
   //
   // State to hold Form Data
@@ -22,6 +27,8 @@ const SignIn = () => {
 
   // Navigation instance
   const navigate = useNavigate();
+  // Instantiate the action dispatcher
+  const dispatch = useDispatch();
 
   // Handler Functions
   const handleSignIn = async (e) => {
@@ -48,7 +55,10 @@ const SignIn = () => {
       if (data.statusCode !== 200) {
         throw new Error(data.message);
       }
-      console.log(data);
+
+      // dispatch data to the store
+      dispatch(signInSuccess(data.user));
+      dispatch(loadCartSuccess(data.cart));
 
       // Clean up Form Data
       setFormProcess({ loading: false, success: true, error: false });

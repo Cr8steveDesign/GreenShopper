@@ -18,13 +18,13 @@ const cartSlice = createSlice({
       state.currentCart = action.payload;
     },
     updateCartSuccess: (state, action) => {
-      state.currentUser = action.payload;
+      state.currentCart = action.payload;
     },
     clearCartSuccess: (state) => {
-      state.currentUser = null;
+      state.currentCart = null;
     },
     deleteCartOnSignOut: (state) => {
-      state.currentUser = null;
+      state.currentCart = null;
     },
   },
 });
@@ -33,8 +33,8 @@ const cartSlice = createSlice({
 export const {
   loadCartSuccess,
   updateUserSuccess,
-  deleteUserSuccess,
-  signOut,
+  clearCartSuccess,
+  deleteCartOnSignOut,
 } = cartSlice.actions;
 
 // Export the reducers to be combined in the store

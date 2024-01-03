@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  // Brint in user
+  const User = useSelector((state) => state.user.currentUser);
+  const Cart = useSelector((state) => state.cart.currentCart);
   // Define Functions
-  const user = null;
 
   const handleSearch = (e) => {
     e.preventDefault();
+    console.log(User);
+    console.log(Cart);
   };
   return (
     <header className="flex flex-col w-full items-center box-border">
@@ -71,9 +76,9 @@ const Header = () => {
               </li>
             </Link>
 
-            <Link to={user ? "/account" : "/signup"}>
+            <Link to={User ? "/account" : "/signup"}>
               <li className="hover:text-[#00B207] transition-opacity ease-in">
-                {user ? "My Account" : "Get Started"}
+                {User ? "My Account" : "Get Started"}
               </li>
             </Link>
 
