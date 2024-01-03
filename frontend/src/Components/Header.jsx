@@ -1,17 +1,41 @@
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { signOut } from "../redux/slice/userSlice.js";
+import { deleteCartOnSignOut } from "../redux/slice/cartSlice.js";
 
 const Header = () => {
   // Brint in user
   const User = useSelector((state) => state.user.currentUser);
   const Cart = useSelector((state) => state.cart.currentCart);
+
+  // instantiate dispatch function
+  const dispatch = useDispatch();
+
+  // instantiate navigate function
+  const navigate = useNavigate();
+
   // Define Functions
 
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log(User);
     console.log(Cart);
   };
+
+  // handle SignOut
+
+  const handleSignOut = async () => {
+    try {
+      await fetch("/api/auth/signout");
+    } catch (err) {
+      alert(err.message);
+      return;
+    }
+    dispatch(signOut());
+    dispatch(deleteCartOnSignOut());
+    navigate("/");
+  };
+
+  // Return JSX
   return (
     <header className="flex flex-col w-full items-center box-border">
       <div className="flex justify-between item-center p-6 w-[100%] max-w-screen-xl">
@@ -28,6 +52,7 @@ const Header = () => {
         >
           <input
             type="text"
+            name="search"
             placeholder="Search Available Products"
             className="p-2 outline outline-1 outline-slate-400 rounded-s-lg"
             required
@@ -65,38 +90,55 @@ const Header = () => {
         <div className="flex justify-between w-[100%] max-w-screen-xl px-6">
           <ul className="flex flex-row justify-between gap-7 cursor-pointer">
             <Link to="/">
-              <li className="hover:text-[#00B207] transition-opacity ease-in">
+              <li className="hover:text-[#00B207] transition-colors ease-in">
                 Home
               </li>
             </Link>
 
             <Link to="/shop">
-              <li className="hover:text-[#00B207] transition-opacity ease-in">
+              <li className="hover:text-[#00B207] transition-colors ease-in">
                 Shop
               </li>
             </Link>
 
             <Link to={User ? "/account" : "/signup"}>
-              <li className="hover:text-[#00B207] transition-opacity ease-in">
+              <li className="hover:text-[#00B207] transition-colors ease-in">
                 {User ? "My Account" : "Get Started"}
               </li>
             </Link>
 
             <Link to="/about-us">
-              <li className="hover:text-[#00B207] transition-opacity ease-in">
+              <li className="hover:text-[#00B207] transition-colors ease-in">
                 About Us
               </li>
             </Link>
 
-            <Link to="/contact-us">
-              <li className="hover:text-[#00B207] transition-opacity ease-in">
-                Contact Us
+            {!User ? (
+              <Link to="/contact-us">
+                <li className="hover:text-[#00B207] transition-colors ease-in">
+                  Contact Us
+                </li>
+              </Link>
+            ) : (
+              <li
+                className="hover:text-red-500 font-bold transition-opacity ease-in"
+                onClick={handleSignOut}
+              >
+                SIGN OUT
               </li>
-            </Link>
+            )}
           </ul>
 
-          {/* Telephone details */}
-          <p className="sm:block hidden">+2348174050194</p>
+          {/* Telephone details or admin button*/}
+          {User?.isAdmin ? (
+            <input
+              type="button"
+              value="Upload Products"
+              className="p-2 h-full bg-[#00B207] rounded-lg text-xs sm:text-md cursor-pointer hover:scale-110 transition ease-in hidden sm:block"
+            />
+          ) : (
+            <p className="sm:block hidden">+2348174050194</p>
+          )}
         </div>
       </nav>
     </header>

@@ -81,7 +81,6 @@ const SignUp = () => {
     >
       <form
         onSubmit={handleSignUp}
-        autoComplete="off"
         className="w-full max-w-sm p-4 flex flex-col text-center gap-3 mx-auto shadow-2xl shadow-slate-200  rounded-2xl"
       >
         <h1 className="md:text-2xl font-extrabold text-slate-900">

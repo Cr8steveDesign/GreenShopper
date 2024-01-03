@@ -25,7 +25,7 @@ const HeroSection = () => {
         </section>
 
         <LazyLoadImage
-          effect="blur"
+          // effect="blur"
           src="/banner-big-1.png"
           alt="Home Screen Banner"
           className="w-full"

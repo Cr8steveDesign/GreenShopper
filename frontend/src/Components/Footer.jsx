@@ -37,6 +37,7 @@ const Footer = () => {
               <input
                 className="p-2 text-sm rounded-s-xl"
                 type="email"
+                name="email-subscribe"
                 placeholder="Your email address."
                 required
               />

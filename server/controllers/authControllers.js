@@ -18,7 +18,6 @@ const signUp = async (req, res, next) => {
 
     // save the newUser Object to database
     const response = await newUser.save();
-    console.log(response);
 
     if (response) {
       // Create a Shopping Cart for the user if successfully created
