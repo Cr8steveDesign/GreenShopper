@@ -1,6 +1,9 @@
 // import { useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 
+// React Tostify
+import { ToastContainer } from "react-toastify";
+
 import ScrollToTop from "./Utils/ScrollTop.jsx";
 import AnimateRoutes from "./AnimateRoutes.jsx";
 
@@ -14,6 +17,7 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop>
+        <ToastContainer />
         <AnimateRoutes />
       </ScrollToTop>
     </BrowserRouter>

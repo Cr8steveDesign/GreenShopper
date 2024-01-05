@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { notifyError } from "../Utils/notifications.js";
 
 const SignUp = () => {
   //
@@ -17,9 +18,6 @@ const SignUp = () => {
     success: true,
     error: false,
   });
-
-  // Server Error Response
-  const [serverError, setServerError] = useState("");
 
   // Navigation instance
   const navigate = useNavigate();
@@ -61,7 +59,7 @@ const SignUp = () => {
     } catch (error) {
       setFormProcess({ loading: false, success: false, error: false });
       // Handle Necessary Error
-      setServerError(error.message);
+      notifyError(error.message);
     }
   };
 
@@ -86,11 +84,6 @@ const SignUp = () => {
         <h1 className="md:text-2xl font-extrabold text-slate-900">
           Create Account
         </h1>
-
-        {/* Error From Server */}
-        {!formProcess.success && (
-          <p className="text-sm text-red-600">{serverError}</p>
-        )}
 
         {/* Name Input */}
         <input

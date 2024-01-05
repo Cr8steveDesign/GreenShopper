@@ -3,7 +3,8 @@
 // get the location and pass it to the Animated Component
 
 import { AnimatePresence } from "framer-motion";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 // Views
 // Import Components and Views
@@ -18,6 +19,8 @@ import Footer from "./Components/Footer.jsx";
 import FAQs from "./Views/FAQs.jsx";
 import SignUp from "./Views/SignUp.jsx";
 import SignIn from "./Views/SignIn.jsx";
+import UploadProduct from "./Views/UploadProduct.jsx";
+import ProductView from "./Views/ProductView.jsx";
 
 /**
  * AnimateRoutes
@@ -30,6 +33,7 @@ import SignIn from "./Views/SignIn.jsx";
 // Component starts here
 const AnimateRoutes = () => {
   // instantiate the location object
+  const Admin = useSelector((state) => state?.user?.currentUser?.isAdmin);
 
   const location = useLocation();
 
@@ -43,12 +47,17 @@ const AnimateRoutes = () => {
           <Route index element={<HomePage />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/shop/:para" element={<Shop />} />
+          <Route path="/shop/product/:param" element={<ProductView />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/faqs" element={<FAQs />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signin" element={<SignIn />} />
+          <Route
+            path="/upload-product"
+            element={Admin ? <UploadProduct /> : <Navigate to="/signin" />}
+          />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         {/* Create Footer Component */}

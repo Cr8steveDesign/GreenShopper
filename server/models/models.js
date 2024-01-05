@@ -46,16 +46,18 @@ const productSchema = mongoose.Schema(
   {
     name: { type: String, required: true },
     description: { type: String, required: true },
+    rating: { type: Number, default: 0 },
     imageUrl: { type: String, required: true },
     inStock: { type: Boolean, default: true },
     isFeatured: { type: Boolean, default: false },
     isSpecialDeal: { type: Boolean, default: false },
-    quantityAvailable: { type: Number, required: true },
     currentPrice: { type: Number, required: true },
     isDiscount: { type: Boolean, default: false },
-    discountPercent: { type: Number },
+    discountPercent: { type: Number, default: 0 },
     discountPrice: { type: Number },
-    otherPictures: [],
+    category: [String],
+    tag: [String],
+    brand: String,
   },
   { timestamps: true }
 );

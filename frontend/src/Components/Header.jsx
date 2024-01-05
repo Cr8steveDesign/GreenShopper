@@ -86,7 +86,7 @@ const Header = () => {
       </div>
 
       {/* Navigation Section */}
-      <nav className="w-full flex justify-center bg-black text-slate-100 py-4 text-[10px] md:text-lg">
+      <nav className="w-full flex justify-center bg-black text-slate-100 py-4 text-[10px] sm:text-base">
         <div className="flex justify-between w-[100%] max-w-screen-xl px-6">
           <ul className="flex flex-row justify-between gap-7 cursor-pointer">
             <Link to="/">
@@ -124,18 +124,20 @@ const Header = () => {
                 className="hover:text-red-500 font-bold transition-opacity ease-in"
                 onClick={handleSignOut}
               >
-                SIGN OUT
+                Sign Out
               </li>
             )}
           </ul>
 
           {/* Telephone details or admin button*/}
           {User?.isAdmin ? (
-            <input
-              type="button"
-              value="Upload Products"
-              className="p-2 h-full bg-[#00B207] rounded-lg text-xs sm:text-md cursor-pointer hover:scale-110 transition ease-in hidden sm:block"
-            />
+            <Link to="/upload-product">
+              <input
+                type="button"
+                value="Upload Products"
+                className="p-2 h-full bg-[#00B207] rounded-lg text-xs sm:text-md cursor-pointer hover:scale-110 transition ease-in hidden sm:block"
+              />
+            </Link>
           ) : (
             <p className="sm:block hidden">+2348174050194</p>
           )}

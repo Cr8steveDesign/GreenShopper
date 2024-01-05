@@ -13,6 +13,7 @@ import cookieParser from "cookie-parser";
 import path from "path";
 import { signUp } from "./controllers/authControllers.js";
 import authRouter from "./routes/authRoute.js";
+import productRouter from "./routes/productRoute.js";
 
 // Load env into the config
 dotenv.config();
@@ -29,7 +30,7 @@ mongoose
   .connect(process.env.MONGO_URI)
   .then((res) => {
     // Connect to database and then on success, start to listen
-    console.clear();
+    console.log("(=============================");
     console.log("Connected to DataBase:", res.connection.name);
 
     // Listen on port
@@ -50,6 +51,7 @@ mongoose
 // @Product/:param (product ID)
 
 app.use("/api/auth", authRouter);
+app.use("/api/admin", productRouter);
 
 // Handle Error Custom Middle Ware
 // Custom Middleware that sends an error I think

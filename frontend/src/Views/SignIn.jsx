@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { notifyError } from "../Utils/notifications.js";
 
 // import redux state management tools
 import { useDispatch } from "react-redux";
@@ -21,9 +22,6 @@ const SignIn = () => {
     success: true,
     error: false,
   });
-
-  // Server Error Response
-  const [serverError, setServerError] = useState("");
 
   // Navigation instance
   const navigate = useNavigate();
@@ -71,7 +69,7 @@ const SignIn = () => {
     } catch (error) {
       setFormProcess({ loading: false, success: false, error: false });
       // Handle Necessary Error
-      setServerError(error.message);
+      notifyError(error.message);
     }
   };
 
@@ -96,11 +94,6 @@ const SignIn = () => {
         <h1 className="md:text-2xl font-extrabold text-slate-900">
           Login to your Account
         </h1>
-
-        {/* Error From Server */}
-        {!formProcess.success && (
-          <p className="text-sm text-red-600">{serverError}</p>
-        )}
 
         {/* Email Input */}
         <input
