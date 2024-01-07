@@ -13,15 +13,17 @@ const Shop = () => {
 
   // State to monitor data fetching
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   para;
   const [allProducts, setAllProducts] = useState([]);
 
   // Load Products from Backend
   const handleFetchAllProducts = async () => {
+    setError(false);
     try {
       const response = await fetch(
-        "https://greenshopper-steve.onrender.com/api/products/all-products"
+        "https://greenshopper-steve.onrender.com/api/products/allproducts"
       );
       const data = await response.json();
 
@@ -34,6 +36,7 @@ const Shop = () => {
       setLoading(false);
     } catch (error) {
       notifyError(error.message);
+      setError(true);
       // console.log(error);
     }
   };
@@ -118,7 +121,11 @@ const Shop = () => {
                 alt="Loading"
                 className="w-[150px] mix-blend-multiply"
               />
-              <p>Loading Products. Please wait</p>
+              <p>
+                {error
+                  ? "There was a problem getting the product lists"
+                  : "Loading Products. Please wait"}
+              </p>
             </div>
           ) : (
             allProducts.map((product, idx) => (

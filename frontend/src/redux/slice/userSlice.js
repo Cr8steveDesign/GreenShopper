@@ -34,8 +34,13 @@ const userSlice = createSlice({
 });
 
 // export the automatic actions that have been created by the toolkit
-export const { signInSuccess, updateUserSuccess, deleteUserSuccess, signOut } =
-  userSlice.actions;
+export const {
+  signInSuccess,
+  updateUserSuccess,
+  deleteUserSuccess,
+  signOut,
+  setTheme,
+} = userSlice.actions;
 
 // Export the reducers to be combined in the store
 export default userSlice.reducer;
