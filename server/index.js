@@ -14,6 +14,7 @@ import path from "path";
 import authRouter from "./routes/authRoute.js";
 import productRouter from "./routes/productRoute.js";
 import getProductsRouter from "./routes/getProducts.js";
+import cors from "cors";
 
 // Load env into the config
 dotenv.config();
@@ -24,6 +25,7 @@ const app = express();
 // Set Up MiddleWare
 app.use(cookieParser());
 app.use(express.json());
+app.use(cors());
 
 // To allow processing form based requests
 app.use(express.urlencoded({ extended: true }));

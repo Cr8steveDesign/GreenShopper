@@ -24,7 +24,7 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="max-w-screen-xl w-full p-6 flex flex-col sm:flex-row gap-5">
+    <div className="max-w-screen-xl w-full p-6 flex flex-col sm:flex-row gap-5 justify-center items-center">
       {/* Navigation Menu */}
       <section className="w-full sm:w-[250px] self-start">
         <div
