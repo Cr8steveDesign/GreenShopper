@@ -21,7 +21,7 @@ const AboutDelivered = () => {
           We Deliver, You Enjoy Your Order
         </h2>
         {/*  */}
-        <p className="text-xs sm:text-base mt-4 w-[90%] text-center md:text-left mx-auto md:mx-0">
+        <p className="text-xs sm:text-base mt-4 w-[90%] text-center md:text-left mx-auto md:mx-0 dark:text-darkTer">
           Ordering food should not be a chore. With our user-friendly interface
           and speedy delivery, satisfying your cravings is just a few taps away.
           Browse our extensive menu, place your order, and get ready to indulge.

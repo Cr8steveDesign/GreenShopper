@@ -82,14 +82,14 @@ const SignIn = () => {
   // Return to DOM
   return (
     <motion.div
-      className="w-full max-w-screen-xl p-4 md:p-16 mx-auto"
+      className="w-full max-w-screen-xl p-4 md:p-16 mx-auto dark:bg-darkSec"
       initial={{ x: "-90%" }}
       animate={{ x: 0 }}
       exit={{ x: "-130%" }}
     >
       <form
         onSubmit={handleSignIn}
-        className="w-full max-w-sm p-4 flex flex-col text-center gap-3 mx-auto shadow-2xl shadow-slate-200  rounded-2xl"
+        className="w-full max-w-sm p-4 flex flex-col text-center gap-3 mx-auto shadow-2xl shadow-slate-200  rounded-2xl dark:bg-darkTer dark:shadow-darkPry"
       >
         <h1 className="md:text-2xl font-extrabold text-slate-900">
           Login to your Account

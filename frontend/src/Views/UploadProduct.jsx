@@ -143,7 +143,7 @@ const UploadProduct = () => {
   // Return to DOM
   return (
     <motion.div
-      className="w-full max-w-screen-xl p-4 md:p-16 mx-auto"
+      className="w-full max-w-screen-xl p-4 md:p-16 mx-auto dark:bg-darkSec"
       initial={{ x: "90%" }}
       animate={{ x: 0 }}
       exit={{ x: "-130%" }}
@@ -151,7 +151,7 @@ const UploadProduct = () => {
       <form
         onSubmit={handleSubmitProduct}
         ref={formRef}
-        className="w-full max-w-lg p-6 flex flex-col text-center gap-3 mx-auto shadow-2xl shadow-slate-200  rounded-2xl bg-slate-100"
+        className="w-full max-w-lg p-6 flex flex-col text-center gap-3 mx-auto shadow-2xl shadow-slate-200  rounded-2xl bg-slate-100 dark:bg-darkTer dark:shadow-darkPry"
       >
         <h1 className="md:text-2xl font-extrabold text-slate-900">
           Upload a Product to the Shop
@@ -252,7 +252,7 @@ const UploadProduct = () => {
         <motion.div
           initial={{ width: "0%" }}
           animate={{ width: String(Math.floor(uploadPercent)) + "%" }}
-          className="mx-auto h-10px text-xs text-white bg-[#00B207]"
+          className="mx-auto h-10px text-xs text-white bg-[#00B207] overflow-hidden"
         >
           {uploadPercent >= 100 ? "File Ready for Upload" : "Uploading"}
         </motion.div>

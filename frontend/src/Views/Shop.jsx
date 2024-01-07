@@ -55,7 +55,11 @@ const Shop = () => {
         {/* Filtering Options  */}
         <div className="flex gap-5 mt-6 flex-wrap justify-center">
           {/* Category Filtering */}
-          <select name="category" id="category" className="bg-white">
+          <select
+            name="category"
+            id="category"
+            className="bg-white dark:bg-darkSec dark:text-white p-1 rounded-md"
+          >
             <option value={null}>Show by Category</option>
             <option value="Vegetables">Vegetables</option>
             <option value="Fruits">Fruits</option>
@@ -63,7 +67,11 @@ const Shop = () => {
           </select>
 
           {/* Price Filtering  */}
-          <select name="price" id="price" className="bg-white">
+          <select
+            name="price"
+            id="price"
+            className="bg-white  dark:bg-darkSec dark:text-white p-1 rounded-md"
+          >
             <option value={null}>Show by Price Range</option>
             <option value={1}>Less than N500</option>
             <option value={2}>Less than N2,000</option>
@@ -71,7 +79,11 @@ const Shop = () => {
           </select>
 
           {/* Ratings Filtering  */}
-          <select name="rating" id="rating" className="bg-white">
+          <select
+            name="rating"
+            id="rating"
+            className="bg-white dark:bg-darkSec dark:text-white p-1 rounded-md"
+          >
             <option value={null}>Show by Ratings</option>
             <option value={5}>⭐⭐⭐⭐⭐</option>
             <option value={4}>⭐⭐⭐⭐</option>
@@ -81,7 +93,11 @@ const Shop = () => {
           </select>
 
           {/* Sorted Filtering  */}
-          <select name="sorting" id="sorting" className="bg-white">
+          <select
+            name="sorting"
+            id="sorting"
+            className="bg-white dark:bg-darkSec dark:text-white p-1 rounded-md"
+          >
             <option value={null}>Sort List By</option>
             <option value={1}>Latest</option>
             <option value={2}>Price - High to Low </option>

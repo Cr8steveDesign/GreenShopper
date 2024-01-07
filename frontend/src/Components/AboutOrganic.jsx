@@ -11,7 +11,7 @@ const AboutOrganic = () => {
           100% Trusted Organic Food Store
         </h2>
         {/*  */}
-        <p className="text-xs sm:text-base mt-4 w-[90%] text-center md:text-left mx-auto md:mx-0">
+        <p className="text-xs sm:text-base mt-4 w-[90%] text-center md:text-left mx-auto md:mx-0 dark:text-darkTer">
           Where integrity meets fresh flavor. Explore our 100% transparent
           supply chain and discover food you can feel good about. Know what you
           are feeding your family. Farm-to-table freshness, guaranteed organic

@@ -27,13 +27,15 @@ const AccordionFaq = ({ title, details, show, setShow, position }) => {
   return (
     <div className="w-full mt-3">
       <div
-        className="flex justify-between bg-slate-200 p-2 cursor-pointer hover:bg-slate-100 transition-colors ease-in"
+        className="flex justify-between bg-slate-200 p-2 cursor-pointer hover:bg-slate-100 transition-colors ease-in "
         onClick={handleClick}
       >
         <p className="font-bold text-slate-700">{title}</p>
         <p className="cursor-pointer">{show === false ? "😵" : "🫣"}</p>
       </div>
-      {show && <p className="p-2 overflow-y-hidden">{details}</p>}
+      {show && (
+        <p className="p-2 overflow-y-hidden dark:text-darkTer">{details}</p>
+      )}
     </div>
   );
 };

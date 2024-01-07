@@ -18,8 +18,8 @@ const AboutTeam = () => {
   };
   //
   return (
-    <div className="max-w-screen-xl w-full text-center mt-6 mb-4 bg-slate-200 p-5 sm:p-8 ">
-      <p className="text-xs text-[#212221]">TEAM</p>
+    <div className="max-w-screen-xl w-full text-center mt-6 mb-4 bg-slate-200 p-5 sm:p-8 dark:bg-darkSec">
+      <p className="text-xs text-[#212221] dark:text-darkTer">TEAM</p>
       <h2 className="text-xl md:text-4xl font-extrabold text-[#00B207]">
         Meet Our Team
       </h2>

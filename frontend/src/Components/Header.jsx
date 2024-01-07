@@ -122,7 +122,9 @@ const Header = () => {
             </Link>
 
             {/* For Space don't render about us for admin */}
-            {User?.isAdmin === false && (
+            {User?.isAdmin === true ? (
+              ""
+            ) : (
               <Link to="/about-us">
                 <li className="hover:text-[#00B207] transition-colors ease-in">
                   About Us

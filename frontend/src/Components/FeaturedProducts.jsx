@@ -6,7 +6,7 @@ import featuredproducts from "../Utils/featureddata.js";
 const FeaturedProducts = () => {
   return (
     <div className="max-w-screen-xl w-full text-center mt-8 mb-4">
-      <p className="text-xs text-[#212221]">PRODUCTS</p>
+      <p className="text-xs text-[#212221] dark:text-darkTer">PRODUCTS</p>
       <h2 className="text-4xl font-extrabold text-[#00B207]">
         Our Featured Products
       </h2>

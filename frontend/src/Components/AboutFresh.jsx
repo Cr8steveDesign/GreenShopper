@@ -7,7 +7,7 @@ const AboutFresh = () => {
   return (
     <div
       id="about-fresh"
-      className="w-full flex flex-col md:flex-row gap-2 mb-5 bg-slate-200"
+      className="w-full flex flex-col md:flex-row gap-2 mb-5 bg-slate-200 dark:bg-darkSec"
     >
       {/*  */}
       <div className="w-full h-full overflow-hidden">
@@ -19,12 +19,12 @@ const AboutFresh = () => {
         />
       </div>
       {/*  */}
-      <div className="w-full sm:p-4 flex flex-col justify-center">
+      <div className="w-full sm:p-4 flex flex-col justify-center dark:text-white">
         <h2 className="text-xl sm:text-4xl lg:text-5xl font-extrabold text-[#00B207] text-center md:text-left p-2">
           Quality Fresh Farm Produce Year Round
         </h2>
         {/*  */}
-        <p className="text-xs sm:text-base mt-4 w-[90%] text-center md:text-left mx-auto md:mx-0">
+        <p className="text-xs sm:text-base mt-4 w-[90%] text-center md:text-left mx-auto md:mx-0 ">
           Forget long journeys and stale supermarkets. We partner with local
           farmers who prioritize sustainable practices and hand-pick their
           harvest at peak ripeness. The result? Farm-to-table freshness that

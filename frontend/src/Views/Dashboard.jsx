@@ -31,7 +31,7 @@ const Dashboard = () => {
           className="flex justify-between mb-2 cursor-pointer"
           onClick={() => setShowLink(!showLink)}
         >
-          <h2 className="font-extrabold">
+          <h2 className="font-extrabold dark:text-darkTer">
             {showLink ? "Hide Navigation" : "Show Navigation"}
           </h2>
         </div>
@@ -39,7 +39,7 @@ const Dashboard = () => {
         {/* Dashboard Navigation starts here */}
 
         {showLink && (
-          <div>
+          <div className="dark:text-darkTer">
             {dashboardnavlinks.map((link, idx) => {
               return (
                 <Link to={link.link} key={idx}>
@@ -63,13 +63,13 @@ const Dashboard = () => {
       <main className="flex flex-col gap-3 w-full p-4">
         <section className="flex flex-col md:flex-row gap-3">
           {/* User Picture and Edit Link */}
-          <div className="w-full border-2 rounded-lg p-4 flex flex-col justify-center items-center overflow-x-hidden">
+          <div className="w-full border-2 rounded-lg p-4 flex flex-col justify-center items-center overflow-x-hidden dark:bg-darkSec dark:border-0">
             <img
               src="/dashboard/avatar.png"
               alt=""
-              className="min-w-[100px] max-w-[150px] pointer-events-none"
+              className="min-w-[100px] max-w-[150px] pointer-events-none rounded-full mb-3"
             />
-            <h2 className="text-xl font-bold">{User.name}</h2>
+            <h2 className="text-xl font-bold dark:text-white">{User.name}</h2>
             <p className="text-sm text-slate-400">
               {User.isAdmin ? "Product Manager" : "Customer"}
             </p>
@@ -79,7 +79,7 @@ const Dashboard = () => {
           </div>
 
           {/* User Billing Address and Edit  */}
-          <div className="w-full border-2 rounded-lg p-4">
+          <div className="w-full border-2 rounded-lg p-4 dark:bg-darkSec dark:border-0 dark:text-white">
             <p>BILLING ADDRESS</p>
             <p className="text-lg mt-3">{User.name}</p>
             <p>{User.address}</p>
@@ -91,11 +91,13 @@ const Dashboard = () => {
         </section>
         <section>
           <div className="flex justify-between">
-            <h2>Recent Order History</h2>
+            <h2 className="dark:text-darkTer">Recent Order History</h2>
             <p className="text-[#00B207] hover:underline hover:underline-offset-4 cursor-pointer">
               View All
             </p>
           </div>
+
+          {/* Goodbye section */}
           <div className="w-full flex items-center justify-center bg-slate-100 p-8 flex-col text-center mt-4 rounded-xl">
             <img
               src="walk-loading.gif"
