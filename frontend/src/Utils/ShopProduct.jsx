@@ -3,7 +3,7 @@
 
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { notifyError } from "./notifications.js";
+import { notifyError, notifyInfo } from "./notifications.js";
 import { updateCartSuccess } from "../redux/slice/cartSlice";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -29,22 +29,34 @@ const ShopProduct = ({ product }) => {
     alert("Will Implement Add to Wish List Here");
   };
 
+  // Calculate final Price after Discount
+  const finalPrice = currentPrice - currentPrice * (discountPercent / 100);
+
   // Handle AddToCart
   // Handle Add To Cart
+  // Handle Add To Cart
   const handleAddToCart = (e) => {
-    // If Cart is NULL (i.e no user login), then redirect to signin page
+    // Prevent event Propagation
     e.preventDefault();
 
+    if (!inStock) {
+      notifyInfo("Selected Product is out of Stock");
+      return;
+    }
+
+    // If Cart is NULL (i.e no user login), then redirect to signin page
     if (!cart) {
       notifyError("Sorry, you need to be logged in.");
       navigate("/signin");
       return;
     }
+    // Calculate final Price
+    const sentPrice = isDiscount ? finalPrice : currentPrice;
 
     dispatch(
       updateCartSuccess({
         product: { id: _id, quantity: 1 },
-        amount: currentPrice * 1,
+        amount: sentPrice * 1,
       })
     );
   };
@@ -88,7 +100,11 @@ const ShopProduct = ({ product }) => {
             {isDiscount === true ? (
               <p>
                 <span>
-                  N{(currentPrice - discountPercent / 100).toFixed(2)}{" "}
+                  N
+                  {(
+                    currentPrice -
+                    (currentPrice * discountPercent) / 100
+                  ).toFixed(2)}{" "}
                 </span>
                 <span className="line-through text-gray-500">
                   N{currentPrice}

@@ -4,7 +4,7 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import SocialMediaLinks from "../Utils/SocialMediaLinks";
-import { notifyError } from "../Utils/notifications.js";
+import { notifyError, notifyInfo } from "../Utils/notifications.js";
 
 import { updateCartSuccess } from "../redux/slice/cartSlice.js";
 import { useSelector, useDispatch } from "react-redux";
@@ -69,10 +69,18 @@ const ProductView = () => {
       navigate("/signin");
       return;
     }
+
+    // Don't add to cart if out out of stock
+    if (!product.inStock) {
+      notifyInfo("Selected Product is out of Stock");
+      return;
+    }
+    const sentPrice = product.isDiscount ? finalPrice : product.currentPrice;
+
     dispatch(
       updateCartSuccess({
         product: { id: param, quantity: quantity },
-        amount: finalPrice * quantity,
+        amount: sentPrice * quantity,
       })
     );
   };

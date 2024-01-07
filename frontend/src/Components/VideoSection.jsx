@@ -13,7 +13,7 @@ const VideoSection = () => {
         <img
           src="play.png"
           alt="Play Our Video"
-          className="flex-start w-[50px] mx-auto hover:scale-125 transition ease-in"
+          className="flex-start w-[50px] mx-auto hover:scale-125 active:scale-50 transition ease-in"
         />
       </div>
     </div>
