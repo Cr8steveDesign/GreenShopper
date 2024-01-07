@@ -104,7 +104,7 @@ const Header = () => {
       </div>
 
       {/* Navigation Section */}
-      <nav className="w-full flex justify-center bg-black dark:bg-darkPry text-slate-100 py-4 text-[12px] sm:text-base">
+      <nav className="w-full flex justify-center bg-black dark:bg-darkPry text-slate-100 py-4 text-[10px] sm:text-base">
         <div className="flex justify-between w-[100%] max-w-screen-xl px-6">
           <ul className="flex flex-row justify-between gap-7 cursor-pointer">
             <Link to="/">
