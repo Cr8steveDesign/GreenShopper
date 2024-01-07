@@ -23,7 +23,14 @@ const Shop = () => {
     setError(false);
     try {
       const response = await fetch(
-        "https://greenshopper-steve.onrender.com/api/products/allproducts"
+        "https://greenshopper-steve.onrender.com/api/products/allproducts",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ info: "Get All Products" }),
+        }
       );
       const data = await response.json();
 
