@@ -20,9 +20,7 @@ const Shop = () => {
   // Load Products from Backend
   const handleFetchAllProducts = async () => {
     try {
-      const response = await fetch("/api/products/all-products", {
-        method: "GET",
-      });
+      const response = await fetch("/api/products/all-products");
       const data = await response.json();
 
       if (data.statusCode !== 200) {
