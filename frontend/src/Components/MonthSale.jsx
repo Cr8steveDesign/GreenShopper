@@ -12,7 +12,7 @@ const MonthSale = () => {
 
       {/* Scale Up the Component  */}
       <CountDown shop={true} />
-      <button className="bg-[#00B207] text-white p-2 rounded-lg hover:opacity-85 transition ease-out active:bg-white active:text-[#00b207]">
+      <button className="bg-[#00B207] text-white p-2 rounded-lg hover:opacity-85 transition ease-in active:bg-white active:text-[#00b207]">
         VIEW DEALS NOW
       </button>
     </div>
