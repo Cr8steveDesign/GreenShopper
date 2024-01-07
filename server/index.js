@@ -25,6 +25,9 @@ const app = express();
 app.use(cookieParser());
 app.use(express.json());
 
+// To allow processing form based requests
+app.use(express.urlencoded({ extended: true }));
+
 // Connect to Database and Start Server
 mongoose
   .connect(process.env.MONGO_URI)
@@ -45,6 +48,18 @@ mongoose
     console.log(err.message);
   });
 
+// Set up Project for Deployment
+if (process.env.NODE_ENV === "production") {
+  const __dirname = path.resolve();
+  app.use(express.static(path.join(__dirname, "frontend", "dist")));
+
+  // Send your html which is the root for your react
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"))
+  );
+} else {
+  app.get("/", (req, res) => res.send("API is running"));
+}
 // Define Routers
 // @Auth: User Sign In / Profile
 // @Products: To Serve the Shop Component
