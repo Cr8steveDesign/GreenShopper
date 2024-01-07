@@ -33,9 +33,7 @@ const AccordionFaq = ({ title, details, show, setShow, position }) => {
         <p className="font-bold text-slate-700">{title}</p>
         <p className="cursor-pointer">{show === false ? "😵" : "🫣"}</p>
       </div>
-      {show && (
-        <p className="p-2 animate-expand overflow-y-hidden">{details}</p>
-      )}
+      {show && <p className="p-2 overflow-y-hidden">{details}</p>}
     </div>
   );
 };

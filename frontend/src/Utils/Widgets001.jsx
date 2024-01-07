@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-export const CountDown = () => {
+// eslint-disable-next-line react/prop-types
+export const CountDown = ({ shop }) => {
   // Set Countdown
   const finalDate = new Date("Jan 31, 2024 23:59:00").getTime();
   const [time, setTime] = useState({
@@ -35,12 +36,16 @@ export const CountDown = () => {
         clearInterval(timeInterval);
         setTime((time) => ({ ...time, expired: true }));
       }
-    });
+    }, 1000);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [time]);
+  }, []);
 
   return (
-    <div className="text-xl sm:text-base">
+    <div
+      className={
+        shop ? "text-white sm:text-2xl font-extrabold" : "text-xl sm:text-base"
+      }
+    >
       {time.expired
         ? "DEAL EXPIRED"
         : `${time.days.toString().padStart(2, 0)} : ${time.hours

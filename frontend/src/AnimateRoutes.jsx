@@ -20,7 +20,7 @@ import FAQs from "./Views/FAQs.jsx";
 import SignUp from "./Views/SignUp.jsx";
 import SignIn from "./Views/SignIn.jsx";
 import UploadProduct from "./Views/UploadProduct.jsx";
-import ProductView from "./Views/ProductView.jsx";
+import ProductView from "./Views/ProductViewLink.jsx";
 
 /**
  * AnimateRoutes

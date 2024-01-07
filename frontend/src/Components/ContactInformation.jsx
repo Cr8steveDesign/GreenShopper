@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { notifySuccess } from "../Utils/notifications.js";
 
 const ContactInformation = () => {
   const [formData, setFormData] = useState({
@@ -32,9 +33,12 @@ const ContactInformation = () => {
     }
 
     // Send form data to email
-    alert(
-      "This is where I would have integrated the mail to be sent to our official mail lol."
+    notifySuccess(
+      `Email Sent Successfully. Lol....just kidding ${
+        formData.name.split(" ")[0]
+      }`
     );
+
     // Reset Form Data
     setFormData({
       name: "",

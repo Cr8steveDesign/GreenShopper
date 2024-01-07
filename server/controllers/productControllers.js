@@ -53,8 +53,59 @@ const uploadProduct = async (req, res, next) => {
       .status(201)
       .json({ statusCode: 201, message: "Product Successfully Created" });
   } catch (err) {
-    console.log(err.message);
+    res.status(403).json({ statusCode: 403, message: "Unknown Error Occured" });
   }
 };
+
+const getProduct = async (req, res, next) => {
+  const productId = req.params;
+
+  console.log(productId);
+  // console.log(req.body);
+  try {
+    const product = await Product.findOne({ _id: productId.id });
+    //save new Product
+
+    if (!product)
+      return res.status(404).json({
+        statusCode: 404,
+        message: "Product Not Found.",
+      });
+
+    console.log(product);
+    // If all things goes well, then return this response
+    res
+      .status(200)
+      .json({ statusCode: 200, message: "Success!", data: product });
+  } catch (err) {
+    res
+      .status(404)
+      .json({ statusCode: 404, message: "Unable to Retrieve Product!" });
+  }
+};
+//
+const getAllProduct = async (req, res, next) => {
+  // console.log(req.body);
+  try {
+    const products = await Product.find();
+
+    if (!products)
+      return res.status(404).json({
+        statusCode: 404,
+        message: "Unable to Retrieve Products",
+      });
+
+    // If all things goes well, then return this response
+    res
+      .status(200)
+      .json({ statusCode: 200, message: "Success!", data: products });
+  } catch (err) {
+    res
+      .status(404)
+      .json({ statusCode: 404, message: "Unable to Retrieve Products!" });
+  }
+};
+
+export { getProduct, getAllProduct };
 
 export default uploadProduct;

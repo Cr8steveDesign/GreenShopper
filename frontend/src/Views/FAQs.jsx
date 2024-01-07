@@ -13,17 +13,16 @@ const FAQs = () => {
 
   return (
     <motion.div
-      initial={{ x: "-90%" }}
-      animate={{ x: 0 }}
-      exit={{ x: "-130%" }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       className="transition-transform ease-in duration-300 sm:flex-row sm:flex max-w-screen-lg mx-auto"
     >
       <img
         src="mansecond.png"
         alt="Man Holding Vegetables"
-        className="w-full sm:max-w-[350px] self-start"
+        className="w-full sm:max-w-[350px] self-end"
       />
-      <div className=" w-full p-5 flex-col flex justify-center items-center transition-transform ease-in duration-300 ]">
+      <div className=" w-full p-5 flex-col flex justify-center items-center transition-transform ease-in duration-100 ]">
         <h1 className="font-extrabold sm:text-2xl text-center sm:text-left text-[#00B207]">
           Welcome! Here are some Frequently Asked Questions from our Esteemed
           Users like yourself.

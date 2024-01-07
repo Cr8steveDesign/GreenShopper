@@ -11,9 +11,9 @@ import express from "express";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import path from "path";
-import { signUp } from "./controllers/authControllers.js";
 import authRouter from "./routes/authRoute.js";
 import productRouter from "./routes/productRoute.js";
+import getProductsRouter from "./routes/getProducts.js";
 
 // Load env into the config
 dotenv.config();
@@ -53,6 +53,9 @@ mongoose
 app.use("/api/auth", authRouter);
 app.use("/api/admin", productRouter);
 
+// Retrieve Products
+app.use("/api/products", getProductsRouter);
+//
 // Handle Error Custom Middle Ware
 // Custom Middleware that sends an error I think
 app.use((err, req, res, next) => {

@@ -80,15 +80,16 @@ const UploadProduct = () => {
       // Clean up Form Data
       notifySuccess("File was Successfully Uploaded to Server");
       setFormProcess({ loading: false, success: true, error: false });
-      setFormData(initialFormData);
       formRef.current.reset();
       setImage(null);
       setUploadPercent(100);
+      setUploading(false);
 
       // Catch Possible Errors
     } catch (error1) {
       notifyError(error1.message);
       setFormProcess({ loading: false, success: false, error: false });
+      setUploading(false);
       setUploadPercent(100);
     }
   };
@@ -185,7 +186,6 @@ const UploadProduct = () => {
           type="number"
           name="currentPrice"
           placeholder="Enter Product Price"
-          value={formData.currentPrice}
           required
           onChange={handleFormChange}
           className="p-3 text-sm rounded-lg w-full outline-1 outline-slate-300 outline valid:outline-2 valid:outline-[#00B207] transition ease-in"

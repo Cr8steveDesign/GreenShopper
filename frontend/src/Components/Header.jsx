@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { signOut } from "../redux/slice/userSlice.js";
 import { deleteCartOnSignOut } from "../redux/slice/cartSlice.js";
+import { notifyError } from "../Utils/notifications.js";
 
 const Header = () => {
   // Brint in user
@@ -18,7 +19,6 @@ const Header = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log(Cart);
   };
 
   // handle SignOut
@@ -27,7 +27,7 @@ const Header = () => {
     try {
       await fetch("/api/auth/signout");
     } catch (err) {
-      alert(err.message);
+      notifyError(err.message);
       return;
     }
     dispatch(signOut());
@@ -60,6 +60,7 @@ const Header = () => {
           <input
             type="submit"
             value="Search"
+            onChange={() => ""}
             className="bg-[#00B207] text-white p-2  outline outline-1 outline-[#00B207] rounded-e-lg hover:cursor-pointer hover:opacity-90 transition-opacity ease-out"
           />
         </form>
@@ -77,16 +78,16 @@ const Header = () => {
               id="Shopping-Cart-Count"
               className="bg-[#00B207] rounded-full p-1 absolute -top-1 w-5 h-5 text-xs text-center text-white left-4"
             >
-              0
+              {Cart ? Cart.products.length : 0}
             </p>
             <img src="/Bag.png" alt="Cart" />
-            <p className="font-bold"> N0.00</p>
+            <p className="font-bold">{Cart ? Cart.totalAmount : 0.0}</p>
           </div>
         </section>
       </div>
 
       {/* Navigation Section */}
-      <nav className="w-full flex justify-center bg-black text-slate-100 py-4 text-[10px] sm:text-base">
+      <nav className="w-full flex justify-center bg-black text-slate-100 py-4 text-[12px] sm:text-base">
         <div className="flex justify-between w-[100%] max-w-screen-xl px-6">
           <ul className="flex flex-row justify-between gap-7 cursor-pointer">
             <Link to="/">
@@ -130,16 +131,24 @@ const Header = () => {
           </ul>
 
           {/* Telephone details or admin button*/}
-          {User?.isAdmin ? (
-            <Link to="/upload-product">
-              <input
-                type="button"
-                value="Upload Products"
-                className="p-2 h-full bg-[#00B207] rounded-lg text-xs sm:text-md cursor-pointer hover:scale-110 transition ease-in hidden sm:block"
-              />
-            </Link>
+          {User ? (
+            User.isAdmin ? (
+              <Link to="/upload-product">
+                <input
+                  type="button"
+                  value="Upload Products"
+                  className="p-2 h-full bg-[#00B207] rounded-lg text-xs sm:text-md cursor-pointer hover:scale-110 transition ease-in"
+                />
+              </Link>
+            ) : (
+              <Link to="/faqs">
+                <p className="font-bold text-white">FAQs</p>
+              </Link>
+            )
           ) : (
-            <p className="sm:block hidden">+2348174050194</p>
+            <Link to="/faqs">
+              <p className="font-bold text-white">FAQs</p>
+            </Link>
           )}
         </div>
       </nav>
