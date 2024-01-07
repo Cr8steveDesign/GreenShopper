@@ -42,7 +42,9 @@ const ProductView = () => {
   const retrieveProduct = async (PRODUCT) => {
     setError(false);
     try {
-      const response = await fetch(`/api/products/single/${PRODUCT}`);
+      const response = await fetch(
+        `https://greenshopper-steve.onrender.com/api/products/single/${PRODUCT}`
+      );
 
       const data = await response.json();
 

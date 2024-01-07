@@ -35,7 +35,7 @@ const Header = () => {
 
   const handleSignOut = async () => {
     try {
-      await fetch("/api/auth/signout");
+      await fetch("https://greenshopper-steve.onrender.com/api/auth/signout");
     } catch (err) {
       notifyError(err.message);
       return;

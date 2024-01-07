@@ -94,7 +94,7 @@ const getAllProduct = async (req, res, next) => {
         statusCode: 404,
         message: "Unable to Retrieve Products",
       });
-    console.log(products);
+    // console.log(products);
     // If all things goes well, then return this response
     res
       .status(200)

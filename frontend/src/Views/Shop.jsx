@@ -20,7 +20,9 @@ const Shop = () => {
   // Load Products from Backend
   const handleFetchAllProducts = async () => {
     try {
-      const response = await fetch("/api/products/all-products");
+      const response = await fetch(
+        "https://greenshopper-steve.onrender.com/api/products/all-products"
+      );
       const data = await response.json();
 
       if (data.statusCode !== 200) {
@@ -32,7 +34,7 @@ const Shop = () => {
       setLoading(false);
     } catch (error) {
       notifyError(error.message);
-      console.log(error);
+      // console.log(error);
     }
   };
 
