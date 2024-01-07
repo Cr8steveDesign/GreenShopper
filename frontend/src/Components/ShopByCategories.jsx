@@ -8,7 +8,7 @@ import CategoryCard from "../Utils/CategoryCard.jsx";
 const ShopByCategories = () => {
   return (
     <div className="max-w-screen-xl w-full text-center mt-6">
-      <p className="text-xs text-[#212221]">CATEGORY</p>
+      <p className="text-xs text-[#212221] dark:text-darkTer">CATEGORY</p>
       <h2 className="text-4xl font-extrabold text-[#00B207]">
         Shop by Top Categories
       </h2>

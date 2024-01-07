@@ -2,7 +2,7 @@
 
 const DetailsBar = () => {
   return (
-    <div className="max-w-screen-xl w-full mt-4 shadow-xl p-3 rounded-xl grid grid-cols-2 gap-y-3  sm:gap-y-0 sm:grid-cols-4 cursor-default">
+    <div className="max-w-screen-xl w-full mt-4 shadow-xl p-3 rounded-xl grid grid-cols-2 gap-y-3  sm:gap-y-0 sm:grid-cols-4 cursor-default  dark:text-white">
       {/* Shipping */}
       <div className="flex gap-3 text-xs">
         <img

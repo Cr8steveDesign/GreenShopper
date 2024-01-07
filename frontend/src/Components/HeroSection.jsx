@@ -5,7 +5,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 
 const HeroSection = () => {
   return (
-    <div className=" max-w-screen-xl w-full grid grid-cols-3 gap-4 shadow-xl p-3 rounded-xl">
+    <div className=" max-w-screen-xl w-full grid grid-cols-3 gap-4 shadow-xl p-3 rounded-xl dark:bg-darkSec">
       <section className="col-span-3 sm:col-span-2 relative">
         {/* Big Featured */}
         <section className="absolute w-full h-full top-0 left-0 rounded-md p-8 sm:p-10 md:p-16 text-white z-10 lg:w-[60%] xl:w-[50%]">

@@ -41,7 +41,7 @@ const AnimateRoutes = () => {
 
   return (
     <AnimatePresence>
-      <div className="w-full">
+      <div className="w-full dark:bg-darkPry">
         {/* Header Component */}
         <Header />
         {/* Routes Will go in here */}

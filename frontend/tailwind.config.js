@@ -1,8 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      colors: {
+        darkPry: "#163020",
+        darkSec: "#304D30",
+        darkTer: "#B6C4B6",
+      },
       keyframes: {
         entry: {
           "0%, 30%": { opacity: 0, transform: "translate(0px, 100px)" },

@@ -9,7 +9,7 @@ const Dashboard = () => {
   // Retrieve user Object from redux state
   const User = useSelector((state) => state.user.currentUser);
   const { param } = useParams();
-  const [showLink, setShowLink] = useState(true);
+  const [showLink, setShowLink] = useState(false);
 
   // Redirect if Not valid user
   const navigate = useNavigate();

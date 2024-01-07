@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { signOut } from "../redux/slice/userSlice.js";
 import { deleteCartOnSignOut } from "../redux/slice/cartSlice.js";
 import { notifyError } from "../Utils/notifications.js";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   // Brint in user
@@ -21,6 +22,15 @@ const Header = () => {
     e.preventDefault();
   };
 
+  // Light mode Dark Mode
+  const [lightMode, setLightMode] = useState(true);
+
+  useEffect(() => {
+    const html = document.querySelector("html");
+
+    html.classList.toggle("dark");
+  }, [lightMode]);
+
   // handle SignOut
 
   const handleSignOut = async () => {
@@ -37,7 +47,7 @@ const Header = () => {
 
   // Return JSX
   return (
-    <header className="flex flex-col w-full items-center box-border">
+    <header className="flex flex-col w-full items-center box-border dark:bg-white">
       <div className="flex justify-between item-center p-6 w-[100%] max-w-screen-xl">
         <Link to="/">
           <h1 className=" text-xl sm:text-3xl font-black ">
@@ -68,10 +78,11 @@ const Header = () => {
         {/* Wishlist and Shopping Cart */}
         <section className="flex justify-between gap-2 ">
           <img
-            src="/Vector.png"
+            src={!lightMode ? "light-dark.jpeg" : "/dark-light.png"}
             alt="Wish List"
             title="Wish List"
-            className=" scale-75"
+            className=" w-[25px] h-[25px] mt-[3px]"
+            onClick={() => setLightMode(!lightMode)}
           />
           <div className="flex justify-between gap-3 h-[80%] relative">
             <p
@@ -81,13 +92,15 @@ const Header = () => {
               {Cart ? Cart.products.length : 0}
             </p>
             <img src="/Bag.png" alt="Cart" />
-            <p className="font-bold">{Cart ? Cart.totalAmount : 0.0}</p>
+            <p className="font-bold">
+              {Cart ? "#" + Cart.totalAmount : "#0.0"}
+            </p>
           </div>
         </section>
       </div>
 
       {/* Navigation Section */}
-      <nav className="w-full flex justify-center bg-black text-slate-100 py-4 text-[12px] sm:text-base">
+      <nav className="w-full flex justify-center bg-black dark:bg-darkPry text-slate-100 py-4 text-[12px] sm:text-base">
         <div className="flex justify-between w-[100%] max-w-screen-xl px-6">
           <ul className="flex flex-row justify-between gap-7 cursor-pointer">
             <Link to="/">
@@ -104,15 +117,18 @@ const Header = () => {
 
             <Link to={User ? "/account" : "/signup"}>
               <li className="hover:text-[#00B207] transition-colors ease-in">
-                {User ? "My Account" : "Get Started"}
+                {User ? "Account" : "Get Started"}
               </li>
             </Link>
 
-            <Link to="/about-us">
-              <li className="hover:text-[#00B207] transition-colors ease-in">
-                About Us
-              </li>
-            </Link>
+            {/* For Space don't render about us for admin */}
+            {User?.isAdmin === false && (
+              <Link to="/about-us">
+                <li className="hover:text-[#00B207] transition-colors ease-in">
+                  About Us
+                </li>
+              </Link>
+            )}
 
             {!User ? (
               <Link to="/contact-us">

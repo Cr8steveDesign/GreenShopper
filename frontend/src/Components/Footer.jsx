@@ -17,7 +17,7 @@ const Footer = () => {
         inView && "animate-entry"
       } w-full bg-black flex flex-col items-center`}
     >
-      <section className="w-full bg-slate-200">
+      <section className="w-full bg-slate-200 dark:bg-darkTer">
         <div className=" w-full mx-auto max-w-screen-xl flex md:flex-row flex-col justify-between items-center p-6">
           {/*  */}
           <div className=" w-full  md:w-[30%] lg:w-[40%] md:text-xs">

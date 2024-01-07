@@ -3,7 +3,7 @@
 
 const TestimonialCard = ({ message, pictureUrl, name, role, reviewStars }) => {
   return (
-    <div className="w-[340px] sm:w-[384px] max-w-[384px] h-[254px] p-5 text-sm bg-slate-50 flex-none overflow-hidden relative cursor-pointer hover:shadow-2xl hover:rounded-md  transition ease-in">
+    <div className="w-[340px] sm:w-[384px] max-w-[384px] h-[254px] p-5 text-sm bg-slate-50 flex-none overflow-hidden relative cursor-pointer hover:shadow-2xl hover:rounded-md  transition ease-in dark:shadow-4xl mb-3">
       <p className="w-full mt-4">{message}</p>
 
       {/*  */}

@@ -18,8 +18,10 @@ const Testimonials = () => {
   };
   //
   return (
-    <div className="max-w-screen-xl w-full text-center mt-6 mb-4 bg-slate-200 p-5 sm:p-8">
-      <p className="text-xs text-[#212221]">CLIENT TESTIMONIAL</p>
+    <div className="max-w-screen-xl w-full text-center mt-6 mb-4 bg-slate-200 p-5 sm:p-8 dark:bg-transparent">
+      <p className="text-xs text-[#212221] dark:text-darkTer">
+        CLIENT TESTIMONIAL
+      </p>
       <h2 className="text-4xl font-extrabold text-[#00B207]">
         What Our Clients Say
       </h2>

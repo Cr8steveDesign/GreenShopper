@@ -34,7 +34,7 @@ const Product = ({
 
   return (
     <Link to={`/shop/product/${productId}`}>
-      <div className="w-[248px] h-[339]  p-4 relative hover:shadow-lg border-2 border-opacity-65 hover:border-green-700 transition-all ease-in duration-500">
+      <div className="w-[248px] h-[339]  p-4 relative hover:shadow-lg border-2 border-opacity-65 hover:border-green-700 transition-all ease-in duration-500 dark:bg-white">
         {/*  */}
         {/* Conditionally render Out of Stock Label */}
         {inStock === false && (

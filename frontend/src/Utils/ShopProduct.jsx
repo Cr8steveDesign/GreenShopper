@@ -90,7 +90,7 @@ const ShopProduct = ({ product }) => {
         <LazyLoadImage
           src={imageUrl}
           alt={name}
-          className="max-w-[248px] max-h-[248px] w-full"
+          className="max-w-[248px] max-h-[248px] w-full object-cover"
         />
 
         {/* product details and cart */}
