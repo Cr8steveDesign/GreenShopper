@@ -6,6 +6,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   currentUser: null,
+  lightTheme: true,
 };
 
 // Create slice with createSlice function
@@ -25,6 +26,9 @@ const userSlice = createSlice({
     },
     signOut: (state) => {
       state.currentUser = null;
+    },
+    setTheme: (state, action) => {
+      state.lightTheme = action.payload;
     },
   },
 });

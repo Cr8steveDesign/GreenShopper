@@ -1,14 +1,15 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { signOut } from "../redux/slice/userSlice.js";
+import { signOut, setTheme } from "../redux/slice/userSlice.js";
 import { deleteCartOnSignOut } from "../redux/slice/cartSlice.js";
 import { notifyError } from "../Utils/notifications.js";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const Header = () => {
   // Brint in user
   const User = useSelector((state) => state.user.currentUser);
   const Cart = useSelector((state) => state.cart.currentCart);
+  const lightTheme = useSelector((state) => state.user.lightTheme);
 
   // instantiate dispatch function
   const dispatch = useDispatch();
@@ -22,14 +23,17 @@ const Header = () => {
     e.preventDefault();
   };
 
-  // Light mode Dark Mode
-  const [lightMode, setLightMode] = useState(true);
-
   useEffect(() => {
     const html = document.querySelector("html");
 
-    html.classList.toggle("dark");
-  }, [lightMode]);
+    if (lightTheme === true) {
+      html.classList.add("dark");
+    } else {
+      html.classList.remove("dark");
+    }
+
+    return;
+  }, [lightTheme]);
 
   // handle SignOut
 
@@ -78,11 +82,11 @@ const Header = () => {
         {/* Wishlist and Shopping Cart */}
         <section className="flex justify-between gap-2 ">
           <img
-            src={!lightMode ? "light-dark.jpeg" : "/dark-light.png"}
+            src={!lightTheme ? "light-dark.jpeg" : "/dark-light.png"}
             alt="Wish List"
             title="Wish List"
             className=" w-[25px] h-[25px] mt-[3px]"
-            onClick={() => setLightMode(!lightMode)}
+            onClick={() => dispatch(setTheme(!lightTheme))}
           />
           <div className="flex justify-between gap-3 h-[80%] relative">
             <p
