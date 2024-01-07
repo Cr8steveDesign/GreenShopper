@@ -21,6 +21,7 @@ import SignUp from "./Views/SignUp.jsx";
 import SignIn from "./Views/SignIn.jsx";
 import UploadProduct from "./Views/UploadProduct.jsx";
 import ProductView from "./Views/ProductViewLink.jsx";
+import Dashboard from "./Views/Dashboard.jsx";
 
 /**
  * AnimateRoutes
@@ -34,6 +35,7 @@ import ProductView from "./Views/ProductViewLink.jsx";
 const AnimateRoutes = () => {
   // instantiate the location object
   const Admin = useSelector((state) => state?.user?.currentUser?.isAdmin);
+  const User = useSelector((state) => state?.user?.currentUser);
 
   const location = useLocation();
 
@@ -54,10 +56,24 @@ const AnimateRoutes = () => {
           <Route path="/faqs" element={<FAQs />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signin" element={<SignIn />} />
+
+          {/* Protected Routes for DashBaord and Admin Upload */}
+          <Route
+            path="/account"
+            element={User ? <Dashboard /> : <Navigate to="/signin" />}
+          />
+          {/*  */}
+          <Route
+            path="/account/:param"
+            element={User ? <Dashboard /> : <Navigate to="/signin" />}
+          />
+          {/*  */}
           <Route
             path="/upload-product"
             element={Admin ? <UploadProduct /> : <Navigate to="/signin" />}
           />
+
+          {/* Error Page Not Found  */}
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         {/* Create Footer Component */}

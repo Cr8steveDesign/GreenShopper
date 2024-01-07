@@ -124,7 +124,7 @@ const SignIn = () => {
         {/* Terms Check Box */}
         <label htmlFor="terms" className="text-xs w-[80%] mx-auto">
           <input type="checkbox" name="acceptTerms" id="terms" required /> By
-          signing up you accept the Terms and Conditions of this platform.
+          signing in you accept the Terms and Conditions of this platform.
         </label>
 
         {/* Submit Button */}
