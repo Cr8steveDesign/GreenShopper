@@ -33,7 +33,7 @@ const signUp = async (req, res, next) => {
 
     //Catch Block
   } catch (error) {
-    console.log(error.message);
+    //console.log(error.message);
     res.status(400).json({
       statusCode: 400,
       success: false,

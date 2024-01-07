@@ -60,7 +60,7 @@ const uploadProduct = async (req, res, next) => {
 const getProduct = async (req, res, next) => {
   const productId = req.params;
 
-  console.log(productId);
+  //console.log(productId);
   // console.log(req.body);
   try {
     const product = await Product.findOne({ _id: productId.id });
@@ -72,7 +72,7 @@ const getProduct = async (req, res, next) => {
         message: "Product Not Found.",
       });
 
-    console.log(product);
+    //console.log(product);
     // If all things goes well, then return this response
     res
       .status(200)

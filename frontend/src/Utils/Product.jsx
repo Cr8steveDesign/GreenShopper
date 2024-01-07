@@ -2,6 +2,7 @@
 // Product Component will be usable across different pages
 
 import { Link } from "react-router-dom";
+import { notifyInfo } from "./notifications.js";
 
 const Product = ({
   imgUrl,
@@ -24,7 +25,7 @@ const Product = ({
   //   Functions to handle Add to Cart and Add to Wish List
   const handleAddToCart = (e) => {
     e.preventDefault();
-    alert("Will Implement Add to Cart Here");
+    notifyInfo("Check out the Shop, please.");
   };
 
   const handleAddToWishList = (e) => {
