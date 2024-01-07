@@ -34,6 +34,7 @@ const Shop = () => {
       setLoading(false);
     } catch (error) {
       notifyError(error.message);
+      console.log(error);
     }
   };
 
@@ -114,8 +115,8 @@ const Shop = () => {
             <div className="mx-auto flex flex-col justify-center items-center">
               <img
                 src="/walk-loading.gif"
-                alt="Loading Products"
-                className="w-[150px]"
+                alt="Loading"
+                className="w-[150px] mix-blend-multiply"
               />
               <p>Loading Products. Please wait</p>
             </div>
