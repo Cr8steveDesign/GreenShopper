@@ -61,16 +61,13 @@ const UploadProduct = () => {
 
     try {
       // Make Api call to back end and await response
-      const response = await fetch(
-        "https://greenshopper-steve.onrender.com/api/admin/upload-product",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch("/api/admin/upload-product", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
       //   Decode Response and see
       const data = await response.json();

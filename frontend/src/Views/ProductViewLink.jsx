@@ -42,16 +42,13 @@ const ProductView = () => {
   const retrieveProduct = async (PRODUCT) => {
     setError(false);
     try {
-      const response = await fetch(
-        `https://greenshopper-steve.onrender.com/api/products/single/${PRODUCT}`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ info: "Get All Products" }),
-        }
-      );
+      const response = await fetch(`/api/products/single/${PRODUCT}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ info: "Get All Products" }),
+      });
 
       const data = await response.json();
 

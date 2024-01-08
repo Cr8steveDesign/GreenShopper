@@ -22,16 +22,13 @@ const Shop = () => {
   const handleFetchAllProducts = async () => {
     setError(false);
     try {
-      const response = await fetch(
-        "https://greenshopper-steve.onrender.com/api/products/allproducts",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ info: "Get All Products" }),
-        }
-      );
+      const response = await fetch("/api/products/allproducts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ info: "Get All Products" }),
+      });
       const data = await response.json();
 
       if (data.statusCode !== 200) {
